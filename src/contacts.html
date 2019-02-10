@@ -1,0 +1,116 @@
+@@include('./templates/header.html')
+
+<main class='main contacts-page'>
+	<!-- Section -->
+	<section class="section contacts">
+		<div class="container">
+			<h1>CONTACT US</h1>
+
+			<div class="row contacts-wrap">
+				<div class="col-md-9 contacts-main">
+					<form action="" class="form form-cotacts">
+						<div class="row">
+							<div class="col-md-6 form-group caption">
+								<p>
+									We'd love to hear from you! Whether it's regarding an existing 
+									order, a future one, or anything else, we'll do our best to get 
+									back to you within 24 hours (but don't worry, it's often
+									much sooner).
+								</p>
+							</div>
+
+							<div class="col-md-6 form-group">
+								<label for="contacts-issue">Issue</label>
+								<input type="email" class="form-control" id="contacts-issue"">
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="row">
+									<div class="col-md-6 form-group">
+										<label for="contacts-first-name">First name</label>
+										<input type="text" class="form-control" id="contacts-first-name">
+									</div>
+									<div class="col-md-6 form-group">
+										<label for="contacts-last-name">Last name</label>
+										<input type="text" class="form-control" id="contacts-last-name">
+									</div>
+								</div>	
+							</div>
+							<div class="col-md-6 form-group">
+								<label for="contacts-email">E-mail</label>
+								<input type="email" class="form-control" id="contacts-email">
+							</div>
+						</div>
+
+						<div class="row row-textarea">
+							<div class="col-md-12 form-group">
+								<label for="contacts-message">Message</label>
+								<textarea class="form-control" rows="10" id="contacts-message"></textarea>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-4">
+								<label for="contacts-phone">Phone</label>
+								<input type="tel" class="form-control" id="contacts-phone">
+							</div>	
+
+							<div class="col-md-8 text-right">
+								<button type='submit' class="btn btn-green">Send</button>
+							</div>
+						</div>
+					</form>
+				</div>
+
+				<div class="col-md-3 contacts-side">
+					<div class="contact-group">
+						<div class="title">EMAIL</div>
+						<div class="descr">
+							<a href="meilto: hello@secondcloset.com">hello@secondcloset.com</a>
+						</div>
+					</div>
+
+					<div class="contact-group">
+						<div class="title">PHONE</div>
+						<div class="descr">
+							<a href="tel: 1-888-888-8888">1-888-888-8888</a>
+						</div>
+					</div>
+
+					<div class="contact-group">
+						<div class="title">HOURS</div>
+						<div class="descr">
+							10am to 10pm <br>
+							7 days a week
+						</div>
+					</div>
+
+					<div class="contact-group">
+						<div class="title">SERVICEABLE AREA</div>
+						<div class="descr descr-list">
+							<li>Toronto</li>
+							<li>Mississauga</li>
+							<li>Markham</li>
+							<li>Brampton</li>
+							<li>Guelph</li>
+							<li>Barrie</li>
+							<li>Hamilton</li>
+						</div>
+					</div>
+
+					<div class="socials">
+						<a href="#"><img src="img/instagram.png" alt=""></a>
+						<a href="#"><img src="img/telegram.png" alt=""></a>
+						<a href="#"><img src="img/twitter.png" alt=""></a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+</main>
+
+@@include('./templates/footer.html')

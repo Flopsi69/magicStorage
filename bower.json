@@ -1,0 +1,23 @@
+{
+  "name": "PlantsTime",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Ziller Dev <flopsi69@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.css": "*",
+    "jquery": "^3.3.1",
+    "waypoints": "~4.0.0",
+    "slick-carousel": "^1.8.1"
+  }
+}

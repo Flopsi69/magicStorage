@@ -1,0 +1,90 @@
+@@include('./templates/header-order.html')
+
+<main class='main select-appointment-page'>
+	<!-- Section -->
+	<section class='section select-appointment'>
+		<div class="container">
+			<!-- Title -->
+			<h1 class='text-center'>SET UP YOUR APPOINTMENT</h1>
+
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<div class="plate text-center">
+						<div class="plate-title">appointment address</div>
+						<div class="caption">Select from your existing addresses:</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="appoint active">
+									404 WINONA DRIVE <br>
+									TORONTO, ONTARIO <br>
+									КАНАДА, M6C 3T5 <br>
+									+1(800)333-8888
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="appoint">
+									404 WINONA DRIVE <br>
+									TORONTO, ONTARIO <br>
+									КАНАДА, M6C 3T5 <br>
+									+1(800)333-8888
+								</div>
+							</div>
+						</div>
+						<div class="btn-wrap">
+							<button class="btn btn-green">add new address</button>
+						</div>
+					</div>
+
+					<div class="row date-wrap">
+						<div class="col-sm-6">
+							<div class="block-date">
+								<h3 class='calendar-title'>drop of date</h3>
+								<div class="calendar-caption">When should we drop off our empty boxes for you to pack?</div>
+								<!-- Calendar -->
+								<div class="calendar-wrap">
+									<!-- Body -->
+									<div class="calendar-body">
+										<!-- https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+										<div class="datetimepicker"></div>
+									</div>
+
+									<!-- Btn -->
+									<div class="btn-wrap">
+										<button class="btn btn-green active">10AM to 1PM</button>
+										<button class="btn btn-green">1PM to 4PM</button>
+										<button class="btn btn-green">4PM to 7PM</button>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-6">
+							<div class="block-date">
+								<h3 class='calendar-title'>pick up date</h3>
+								<div class="calendar-caption">When should we pick up your items to bring to storage?</div>
+								<!-- Calendar -->
+								<div class="calendar-wrap">
+									<!-- Body -->
+									<div class="calendar-body">
+										<!-- https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+										<div class="datetimepicker"></div>
+									</div>
+
+									<!-- Btn -->
+									<div class="btn-wrap">
+										<button class="btn btn-green active">10AM to 1PM</button>
+										<button class="btn btn-green">1PM to 4PM</button>
+										<button class="btn btn-green">4PM to 7PM</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</main>
+
+@@include('./templates/footer-steps.html')

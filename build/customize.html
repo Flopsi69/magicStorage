@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Title</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/slick.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<header class='header'>
+		<div class="container">
+			<nav class="navbar">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
+				</div>
+
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right"> 
+						<li><a href="#">how it works</a></li>
+						<li><a href="#">pricing</a></li>
+						<li><a class='tel' href="tel: 1-888-888-8888">1-888-888-8888</a></li>
+						<li><a href="#">account</a></li>
+						<li><button class='btn btn-green'>Start here</button></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</header>
+
+
+<main class='main customize-page'>
+	<!-- Section -->
+	<section class='section customize'>
+		<div class="container">
+			<!-- Title -->
+			<h1>customize your plan</h1>
+
+			<!-- Wrap -->
+			<div class="row text-center customize-wrap">
+				<div class="col-md-4 col-md-offset-2 col-sm-5 col-sm-offset-1">
+					<div class="customize-block">
+						<div class="icon"><img src="img/customize-4.png" alt=""></div>
+						<h5 class="title">documental plan</h5>
+						<div class="price">Starting at $45/mo.</div>
+						<p class="descr">Just like self-storage, but better! Book fixed space with pick up service.</p>
+						<!-- Btn -->
+						<div class="btn-wrap text-center">
+							<button class="btn btn-green">Get started</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-4 col-sm-5">
+					<div class="customize-block">
+						<div class="icon"><img src="img/customize-5.png" alt=""></div>
+						<h5 class="title">item plan</h5>
+						<div class="price">Starting at $45/mo.</div>
+						<p class="descr">Just like self-storage, but better! Book fixed space with pick up service.</p>
+						<!-- Btn -->
+						<div class="btn-wrap text-center">
+							<button class="btn btn-green">Get started</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</main>
+
+	<footer class='footer'>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="nav-title">Company</div>
+					<nav class='nav'>
+						<a href="#">Why us</a>
+						<a href="#">Pricing</a>
+						<a href="#">Reviews</a>
+					</nav>
+				</div>
+
+				<div class="col-sm-4">
+					<div class="nav-title">Services</div>
+					<nav class='nav'>
+						<a href="#">Why us</a>
+						<a href="#">Pricing</a>
+						<a href="#">Reviews</a>
+					</nav>
+				</div>
+
+				<div class="col-sm-4">
+					<div class="nav-title">Contacts</div>
+					<div class="contacts">
+						<a href="tel: 1-888-888-8888 ">1-888-888-8888</a>
+						<a href="mail:to">mail@magicstorage.ca</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="copyright text-center">
+				2019 &copy; All rights reserved
+			</div>
+		</div>
+	</footer>
+
+	<script src='js/vendor/jquery.min.js'></script>
+	<script src='js/vendor/moment-with-locales.min.js'></script>
+	<script src='js/vendor/bootstrap.min.js'></script>
+	<script src='js/vendor/bootstrap-datetimepicker.min.js'></script>
+	<script src='js/vendor/slick.min.js'></script>
+	<script src='js/main.js'></script>
+	<script type="text/javascript">
+		$(function () {
+			if (	$('.datetimepicker').length ) {
+
+				$('.datetimepicker').datetimepicker({
+					inline: true,
+					format: 'MM/dd/YYYY'
+				});
+			}
+		});
+	</script>
+
+	<script>
+		$(function () {
+			$('[data-toggle="popover"]').popover({
+				trigger: 'focus hover', 
+				placepent: 'bottom'
+			});
+		})
+	</script>
+
+	<script>
+		$('.quantity .btn').click(function(e){
+			e.preventDefault();
+			var input = $(this).siblings('input');
+			var currentVal = parseInt(input.val());
+			if (!isNaN(currentVal)) {
+				if( $(this).hasClass('btn-minus') ){
+					if(currentVal >= input.attr('min')) {
+						input.val(currentVal - 1).change();
+					} 
+					if(parseInt(input.val()) == input.attr('min')) {
+						$(this).attr('disabled', true);
+					}
+				} else if( $(this).hasClass('btn-plus') ){
+					if(currentVal <= input.attr('max')) {
+						input.val(currentVal + 1).change();
+					}
+					if(parseInt(input.val()) == input.attr('max')) {
+						$(this).attr('disabled', true);
+					}
+
+				}
+			} else {
+				input.val(input.attr('min'));
+			}
+		});
+
+		$('.quantity input').change(function() {
+			minValue =  parseInt($(this).attr('min'));
+			maxValue =  parseInt($(this).attr('max'));
+			valueCurrent = parseInt($(this).val());
+
+			name = $(this).attr('name');
+			if(valueCurrent >= minValue) {
+				$(this).siblings('.btn-minus').removeAttr('disabled');
+			} else {
+				$(this).val(minValue).siblings('.btn-minus').attr('disabled', true);
+			}
+			if(valueCurrent <= maxValue) {
+				$(this).siblings('.btn-plus').removeAttr('disabled');
+			} else {
+				$(this).val(maxValue).siblings('.btn-plus').attr('disabled', true);
+
+			}
+		});
+	</script>
+
+	<script>
+		$(function(){
+			$('a[data-toggle="collapse"]').click(function() {
+				if ( !$(this).hasClass('active') ) {
+					$('a[data-toggle="collapse"]:not(this)').removeClass('active');
+				}
+				$(this).toggleClass('active');
+			})
+		})
+	</script>
+	
+</body>
+</html>

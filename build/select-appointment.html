@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Title</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" href="css/slick.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<header class='header header-steps'>
+		<div class="container">
+			<div class="wrap">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#"><img src="img/logo.png" alt=""> <img src="img/logo-small.png" alt="" class='logo-toggle'></a>
+				</div>
+
+				<ul class="steps">
+					<li class='active'>Customize</li>
+					<li>Appointment</li>
+					<li class='done'>Billings</li>
+					<li>Review</li>
+				</ul>
+
+				<div class="subtotal">
+					Subtotal <span class="price">$39.75</span> <span class="num">4</span>
+				</div>
+			</div>
+		</div>
+	</header>
+
+
+<main class='main select-appointment-page'>
+	<!-- Section -->
+	<section class='section select-appointment'>
+		<div class="container">
+			<!-- Title -->
+			<h1 class='text-center'>SET UP YOUR APPOINTMENT</h1>
+
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<div class="plate text-center">
+						<div class="plate-title">appointment address</div>
+						<div class="caption">Select from your existing addresses:</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="appoint active">
+									404 WINONA DRIVE <br>
+									TORONTO, ONTARIO <br>
+									КАНАДА, M6C 3T5 <br>
+									+1(800)333-8888
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="appoint">
+									404 WINONA DRIVE <br>
+									TORONTO, ONTARIO <br>
+									КАНАДА, M6C 3T5 <br>
+									+1(800)333-8888
+								</div>
+							</div>
+						</div>
+						<div class="btn-wrap">
+							<button class="btn btn-green">add new address</button>
+						</div>
+					</div>
+
+					<div class="row date-wrap">
+						<div class="col-sm-6">
+							<div class="block-date">
+								<h3 class='calendar-title'>drop of date</h3>
+								<div class="calendar-caption">When should we drop off our empty boxes for you to pack?</div>
+								<!-- Calendar -->
+								<div class="calendar-wrap">
+									<!-- Body -->
+									<div class="calendar-body">
+										<!-- https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+										<div class="datetimepicker"></div>
+									</div>
+
+									<!-- Btn -->
+									<div class="btn-wrap">
+										<button class="btn btn-green active">10AM to 1PM</button>
+										<button class="btn btn-green">1PM to 4PM</button>
+										<button class="btn btn-green">4PM to 7PM</button>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-6">
+							<div class="block-date">
+								<h3 class='calendar-title'>pick up date</h3>
+								<div class="calendar-caption">When should we pick up your items to bring to storage?</div>
+								<!-- Calendar -->
+								<div class="calendar-wrap">
+									<!-- Body -->
+									<div class="calendar-body">
+										<!-- https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+										<div class="datetimepicker"></div>
+									</div>
+
+									<!-- Btn -->
+									<div class="btn-wrap">
+										<button class="btn btn-green active">10AM to 1PM</button>
+										<button class="btn btn-green">1PM to 4PM</button>
+										<button class="btn btn-green">4PM to 7PM</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</main>
+
+<div class="fixed-footer">
+	<div class="container">
+		<button class="btn btn-next">
+			Next &#10095;
+		</button>
+		<div class="subtotal">
+			Subtotal <span class="price">$39.75</span> <span class="num">4</span>
+		</div>
+	</div>
+</div>
+
+	<script src='js/vendor/jquery.min.js'></script>
+	<script src='js/vendor/moment-with-locales.min.js'></script>
+	<script src='js/vendor/bootstrap.min.js'></script>
+	<script src='js/vendor/bootstrap-datetimepicker.min.js'></script>
+	<script src='js/vendor/slick.min.js'></script>
+	<script src='js/main.js'></script>
+	<script type="text/javascript">
+		$(function () {
+			if (	$('.datetimepicker').length ) {
+
+				$('.datetimepicker').datetimepicker({
+					inline: true,
+					format: 'MM/dd/YYYY'
+				});
+			}
+		});
+	</script>
+
+	<script>
+		$(function () {
+			$('[data-toggle="popover"]').popover({
+				trigger: 'focus hover', 
+				placepent: 'bottom'
+			});
+		})
+	</script>
+
+	<script>
+		$('.quantity .btn').click(function(e){
+			e.preventDefault();
+			var input = $(this).siblings('input');
+			var currentVal = parseInt(input.val());
+			if (!isNaN(currentVal)) {
+				if( $(this).hasClass('btn-minus') ){
+					if(currentVal >= input.attr('min')) {
+						input.val(currentVal - 1).change();
+					} 
+					if(parseInt(input.val()) == input.attr('min')) {
+						$(this).attr('disabled', true);
+					}
+				} else if( $(this).hasClass('btn-plus') ){
+					if(currentVal <= input.attr('max')) {
+						input.val(currentVal + 1).change();
+					}
+					if(parseInt(input.val()) == input.attr('max')) {
+						$(this).attr('disabled', true);
+					}
+
+				}
+			} else {
+				input.val(input.attr('min'));
+			}
+		});
+
+		$('.quantity input').change(function() {
+			minValue =  parseInt($(this).attr('min'));
+			maxValue =  parseInt($(this).attr('max'));
+			valueCurrent = parseInt($(this).val());
+
+			name = $(this).attr('name');
+			if(valueCurrent >= minValue) {
+				$(this).siblings('.btn-minus').removeAttr('disabled');
+			} else {
+				$(this).val(minValue).siblings('.btn-minus').attr('disabled', true);
+			}
+			if(valueCurrent <= maxValue) {
+				$(this).siblings('.btn-plus').removeAttr('disabled');
+			} else {
+				$(this).val(maxValue).siblings('.btn-plus').attr('disabled', true);
+
+			}
+		});
+	</script>
+
+	<script>
+		$(function(){
+			$('a[data-toggle="collapse"]').click(function() {
+				if ( !$(this).hasClass('active') ) {
+					$('a[data-toggle="collapse"]:not(this)').removeClass('active');
+				}
+				$(this).toggleClass('active');
+			})
+		})
+	</script>
+	
+</body>
+</html>
+

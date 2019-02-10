@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Title</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" href="css/slick.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<header class='header'>
+		<div class="container">
+			<nav class="navbar">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
+				</div>
+
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right"> 
+						<li class='active'><a href="#">my closet</a></li>
+						<li><a href="#">orders</a></li>
+						<li><a href="#">billing</a></li>
+						<li><a href="#">profile</a></li>
+						<li><a href='#' id='logout'>logout</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</header>
+
+
+<div class="modal fade block-date modal-date" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<h3 class='calendar-title'>drop of date</h3>
+		<div class="calendar-caption">When should we drop off our empty boxes for you to pack?</div>
+
+		<!-- Calendar -->
+		<div class="calendar-wrap">
+			<!-- Body -->
+			<div class="calendar-body">
+				<!-- https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+				<div class="datetimepicker"></div>
+			</div>
+
+			<!-- Btn -->
+			<div class="btn-wrap">
+				<button class="btn btn-green active">10AM to 1PM</button>
+				<button class="btn btn-green">1PM to 4PM</button>
+				<button class="btn btn-green">4PM to 7PM</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<main class='main inventory-page'>
+	<!-- Section -->
+	<section class='section inventory'>
+		<div class="container">
+			<!-- Title -->
+			<h1>Inventory list</h1>
+
+			<!-- Tabs nav -->
+			<ul class="nav inventory-tabs" role="tablist">
+				<li role="presentation" class="active"><a role='tab' data-toggle="tab" href="#requested">requested</a></li>
+				<li role="presentation"><a role='tab' data-toggle="tab" href="#in-storage">in-storage</a></li>
+				<li role="presentation"><a role='tab' data-toggle="tab" href="#requested-return">requested return </a></li>
+				<li role="presentation"><a role='tab' data-toggle="tab" href="#returned">returned</a></li>
+			</ul>
+			
+			<!-- Tabs content -->
+			<div class="tab-content">
+				<!-- Panel -->
+				<div role="tabpanel" class="tab-pane fade in active" id="requested">
+					<div class="row">
+						<div class="col-sm-6">
+							<!-- TItle -->
+							<div class="plan-title" id='item-plan'>Item plan</div>
+
+							<!-- List -->
+							<div class="list-plan">
+								<div class="list-header">
+									<div class="row">
+										<div class="col-md-6 col-xs-8">Name Item</div>
+										<div class="col-md-5 col-xs-4">Quantity</div>
+									</div>
+								</div>
+								<div class="list-body">
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 1</div>
+										</div>
+										<div class="col-md-5 col-xs-4 item-quantity">22</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 2</div>
+										</div>
+										<div class="col-md-5 col-xs-4 item-quantity">23</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 3</div>
+										</div>
+										<div class="col-md-5 col-xs-4 item-quantity">12</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 4</div>
+										</div>
+										<div class="col-md-5 col-xs-4 item-quantity">42</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 5</div>
+										</div>
+										<div class="col-md-6 col-xs-4 item-quantity">2</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 6</div>
+										</div>
+										<div class="col-md-6 col-xs-4 item-quantity">22</div>
+									</div>
+
+									<div class="deadline-booking">
+										<div class="date">31.02.2019</div>
+										<div class="time">8AM to 12PM</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-6">
+							<!-- Title -->
+							<div class="plan-title" id='document-plan'>Documental plan</div>
+
+							<!-- List -->
+							<div class="list-plan">
+								<div class="list-header">
+									<div class="row">
+										<div class="col-md-6 col-xs-8">Name Item</div>
+										<div class="col-md-5 col-xs-4">Quantity</div>
+									</div>
+								</div>
+								<div class="list-body">
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 1</div>
+										</div>
+										<div class="col-md-5 col-xs-4 item-quantity">22</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 2</div>
+										</div>
+										<div class="col-md-5 col-xs-4 item-quantity">23</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 3</div>
+										</div>
+										<div class="col-md-5 col-xs-4 item-quantity">12</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 4</div>
+										</div>
+										<div class="col-md-5 col-xs-4 item-quantity">42</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 5</div>
+										</div>
+										<div class="col-md-6 col-xs-4 item-quantity">2</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 6</div>
+										</div>
+										<div class="col-md-6 col-xs-4 item-quantity">22</div>
+									</div>
+
+									<div class="deadline-booking">
+										<div class="date">31.02.2019</div>
+										<div class="time">8AM to 12PM</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Panel -->
+				<div role="tabpanel" class="tab-pane fade" id="in-storage">
+					<div class="row">
+						<div class="col-sm-6">
+							<!-- TItle -->
+							<div class="plan-title" id='item-plan'>Item plan</div>
+
+							<!-- List -->
+							<div class="list-plan">
+								<div class="list-header">
+									<div class="row">
+										<div class="col-md-6 col-xs-8">Name Item</div>
+										<div class="col-md-5 col-xs-4">Quantity</div>
+									</div>
+								</div>
+								<div class="list-body">
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 1</div>
+										</div>
+										<div class="col-md-5 col-xs-4 item-quantity">22</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 2</div>
+										</div>
+										<div class="col-md-5 col-xs-4 item-quantity">23</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 3</div>
+										</div>
+										<div class="col-md-5 col-xs-4 item-quantity">12</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 4</div>
+										</div>
+										<div class="col-md-5 col-xs-4 item-quantity">42</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 5</div>
+										</div>
+										<div class="col-md-6 col-xs-4 item-quantity">2</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 6</div>
+										</div>
+										<div class="col-md-6 col-xs-4 item-quantity">22</div>
+									</div>
+
+									<div class="deadline-booking" data-toggle="modal" data-target=".modal-date">
+										<div class="date">31.02.2019</div>
+										<div class="time">8AM to 12PM</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Btn -->
+							<div class="btn-wrap">
+								<button class="btn btn-green">забрать сейчас</button>
+								<button class="btn btn-green">продлить</button>
+							</div>
+						</div>
+
+						<div class="col-sm-6">
+							<!-- Title -->
+							<div class="plan-title" id='document-plan'>Documental plan</div>
+
+							<!-- List -->
+							<div class="list-plan">
+								<div class="list-header">
+									<div class="row">
+										<div class="col-md-6 col-xs-8">Name Item</div>
+										<div class="col-md-5 col-xs-4">Quantity</div>
+									</div>
+								</div>
+								<div class="list-body">
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 1</div>
+										</div>
+										<div class="col-md-5 col-xs-4 item-quantity">22</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 2</div>
+										</div>
+										<div class="col-md-5 col-xs-4 item-quantity">23</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 3</div>
+										</div>
+										<div class="col-md-5 col-xs-4 item-quantity">12</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 4</div>
+										</div>
+										<div class="col-md-5 col-xs-4 item-quantity">42</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 5</div>
+										</div>
+										<div class="col-md-6 col-xs-4 item-quantity">2</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 6</div>
+										</div>
+										<div class="col-md-6 col-xs-4 item-quantity">22</div>
+									</div>
+
+									<div class="deadline-booking" data-toggle="modal" data-target=".modal-date">
+										<div class="date">31.02.2019</div>
+										<div class="time">8AM to 12PM</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Btn -->
+							<div class="btn-wrap">
+								<button class="btn btn-green">забрать сейчас</button>
+								<button class="btn btn-green">продлить</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Panel -->
+				<div role="tabpanel" class="tab-pane fade" id="requested-return">
+					<div class="row">
+						<div class="col-sm-6">
+							<!-- TItle -->
+							<div class="plan-title" id='item-plan'>Item plan</div>
+
+							<!-- List -->
+							<div class="list-plan">
+								<div class="list-header">
+									<div class="row">
+										<div class="col-md-6 col-xs-8">Name Item</div>
+										<div class="col-md-5 col-xs-4">Quantity</div>
+									</div>
+								</div>
+								<div class="list-body">
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 1</div>
+										</div>
+										<div class="col-md-5 col-xs-4 item-quantity">22</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 2</div>
+										</div>
+										<div class="col-md-5 col-xs-4 item-quantity">23</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 3</div>
+										</div>
+										<div class="col-md-5 col-xs-4 item-quantity">12</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 4</div>
+										</div>
+										<div class="col-md-5 col-xs-4 item-quantity">42</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 5</div>
+										</div>
+										<div class="col-md-6 col-xs-4 item-quantity">2</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 6</div>
+										</div>
+										<div class="col-md-6 col-xs-4 item-quantity">22</div>
+									</div>
+
+									<div class="deadline-booking" data-toggle="modal" data-target=".modal-date">
+										<div class="date">31.02.2019</div>
+										<div class="time">8AM to 12PM</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Btn -->
+							<div class="btn-wrap">
+								<button class="btn btn-green">продлить</button>
+							</div>
+						</div>
+
+						<div class="col-sm-6">
+							<!-- Title -->
+							<div class="plan-title" id='document-plan'>Documental plan</div>
+
+							<!-- List -->
+							<div class="list-plan">
+								<div class="list-header">
+									<div class="row">
+										<div class="col-md-6 col-xs-8">Name Item</div>
+										<div class="col-md-5 col-xs-4">Quantity</div>
+									</div>
+								</div>
+								<div class="list-body">
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 1</div>
+										</div>
+										<div class="col-md-5 col-xs-4 item-quantity">22</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 2</div>
+										</div>
+										<div class="col-md-5 col-xs-4 item-quantity">23</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 3</div>
+										</div>
+										<div class="col-md-5 col-xs-4 item-quantity">12</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 4</div>
+										</div>
+										<div class="col-md-5 col-xs-4 item-quantity">42</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 5</div>
+										</div>
+										<div class="col-md-6 col-xs-4 item-quantity">2</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 6</div>
+										</div>
+										<div class="col-md-6 col-xs-4 item-quantity">22</div>
+									</div>
+
+									<div class="deadline-booking" data-toggle="modal" data-target=".modal-date">
+										<div class="date">31.02.2019</div>
+										<div class="time">8AM to 12PM</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Btn -->
+							<div class="btn-wrap">
+								<button class="btn btn-green">продлить</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Panel -->
+				<div role="tabpanel" class="tab-pane fade" id="returned">
+					<div class="row">
+						<div class="col-sm-6">
+							<!-- TItle -->
+							<div class="plan-title" id='item-plan'>Item plan</div>
+
+							<!-- List -->
+							<div class="list-plan">
+								<div class="list-header">
+									<div class="row">
+										<div class="col-md-6 col-xs-8">Name Item</div>
+										<div class="col-md-5 col-xs-4">Quantity</div>
+									</div>
+								</div>
+								<div class="list-body">
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 1</div>
+										</div>
+										<div class="col-md-5 col-xs-4 item-quantity">22</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 2</div>
+										</div>
+										<div class="col-md-5 col-xs-4 item-quantity">23</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 3</div>
+										</div>
+										<div class="col-md-5 col-xs-4 item-quantity">12</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 4</div>
+										</div>
+										<div class="col-md-5 col-xs-4 item-quantity">42</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 5</div>
+										</div>
+										<div class="col-md-6 col-xs-4 item-quantity">2</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 6</div>
+										</div>
+										<div class="col-md-6 col-xs-4 item-quantity">22</div>
+									</div>
+
+									<div class="deadline-booking">
+										<div class="date">31.02.2019</div>
+										<div class="time">8AM to 12PM</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-6">
+							<!-- Title -->
+							<div class="plan-title" id='document-plan'>Documental plan</div>
+
+							<!-- List -->
+							<div class="list-plan">
+								<div class="list-header">
+									<div class="row">
+										<div class="col-md-6 col-xs-8">Name Item</div>
+										<div class="col-md-5 col-xs-4">Quantity</div>
+									</div>
+								</div>
+								<div class="list-body">
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 1</div>
+										</div>
+										<div class="col-md-5 col-xs-4 item-quantity">22</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 2</div>
+										</div>
+										<div class="col-md-5 col-xs-4 item-quantity">23</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 3</div>
+										</div>
+										<div class="col-md-5 col-xs-4 item-quantity">12</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 4</div>
+										</div>
+										<div class="col-md-5 col-xs-4 item-quantity">42</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 5</div>
+										</div>
+										<div class="col-md-6 col-xs-4 item-quantity">2</div>
+									</div>
+
+									<!-- Item -->
+									<div class="row item-row">
+										<div class="col-md-6 col-xs-8">
+											<div class="item-name">Item 6</div>
+										</div>
+										<div class="col-md-6 col-xs-4 item-quantity">22</div>
+									</div>
+
+									<div class="deadline-booking">
+										<div class="date">31.02.2019</div>
+										<div class="time">8AM to 12PM</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</main>
+
+	<footer class='footer'>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="nav-title">Company</div>
+					<nav class='nav'>
+						<a href="#">Why us</a>
+						<a href="#">Pricing</a>
+						<a href="#">Reviews</a>
+					</nav>
+				</div>
+
+				<div class="col-sm-4">
+					<div class="nav-title">Services</div>
+					<nav class='nav'>
+						<a href="#">Why us</a>
+						<a href="#">Pricing</a>
+						<a href="#">Reviews</a>
+					</nav>
+				</div>
+
+				<div class="col-sm-4">
+					<div class="nav-title">Contacts</div>
+					<div class="contacts">
+						<a href="tel: 1-888-888-8888 ">1-888-888-8888</a>
+						<a href="mail:to">mail@magicstorage.ca</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="copyright text-center">
+				2019 &copy; All rights reserved
+			</div>
+		</div>
+	</footer>
+
+	<script src='js/vendor/jquery.min.js'></script>
+	<script src='js/vendor/moment-with-locales.min.js'></script>
+	<script src='js/vendor/bootstrap.min.js'></script>
+	<script src='js/vendor/bootstrap-datetimepicker.min.js'></script>
+	<script src='js/vendor/slick.min.js'></script>
+	<script src='js/main.js'></script>
+	<script type="text/javascript">
+		$(function () {
+			if (	$('.datetimepicker').length ) {
+
+				$('.datetimepicker').datetimepicker({
+					inline: true,
+					format: 'MM/dd/YYYY'
+				});
+			}
+		});
+	</script>
+
+	<script>
+		$(function () {
+			$('[data-toggle="popover"]').popover({
+				trigger: 'focus hover', 
+				placepent: 'bottom'
+			});
+		})
+	</script>
+
+	<script>
+		$('.quantity .btn').click(function(e){
+			e.preventDefault();
+			var input = $(this).siblings('input');
+			var currentVal = parseInt(input.val());
+			if (!isNaN(currentVal)) {
+				if( $(this).hasClass('btn-minus') ){
+					if(currentVal >= input.attr('min')) {
+						input.val(currentVal - 1).change();
+					} 
+					if(parseInt(input.val()) == input.attr('min')) {
+						$(this).attr('disabled', true);
+					}
+				} else if( $(this).hasClass('btn-plus') ){
+					if(currentVal <= input.attr('max')) {
+						input.val(currentVal + 1).change();
+					}
+					if(parseInt(input.val()) == input.attr('max')) {
+						$(this).attr('disabled', true);
+					}
+
+				}
+			} else {
+				input.val(input.attr('min'));
+			}
+		});
+
+		$('.quantity input').change(function() {
+			minValue =  parseInt($(this).attr('min'));
+			maxValue =  parseInt($(this).attr('max'));
+			valueCurrent = parseInt($(this).val());
+
+			name = $(this).attr('name');
+			if(valueCurrent >= minValue) {
+				$(this).siblings('.btn-minus').removeAttr('disabled');
+			} else {
+				$(this).val(minValue).siblings('.btn-minus').attr('disabled', true);
+			}
+			if(valueCurrent <= maxValue) {
+				$(this).siblings('.btn-plus').removeAttr('disabled');
+			} else {
+				$(this).val(maxValue).siblings('.btn-plus').attr('disabled', true);
+
+			}
+		});
+	</script>
+
+	<script>
+		$(function(){
+			$('a[data-toggle="collapse"]').click(function() {
+				if ( !$(this).hasClass('active') ) {
+					$('a[data-toggle="collapse"]:not(this)').removeClass('active');
+				}
+				$(this).toggleClass('active');
+			})
+		})
+	</script>
+	
+</body>
+</html>

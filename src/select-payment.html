@@ -1,0 +1,41 @@
+@@include('./templates/header-order.html')
+
+<main class='main select-payment-page'>
+	<!-- Section -->
+	<section class='section select-payment'>
+		<div class="container">
+			<!-- Title -->
+			<h1 class='text-center'>SELECT YOUR PAYMENT METHOD</h1>
+			<div class="alert-caption">Confirm an existing payment method or input a new one. Don't worry - you won't be charged until your first appointment!</div>
+
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+
+					<div class="plate text-center">
+						<div class="plate-title">Billing details</div>
+						<!-- Details -->
+						<div class="billing-details">
+							<div class="card-data">
+								<div class="num">XXXX-XXXX-XXXX-5311</div>
+								<div class="expiry">Expiry Date: 7, 2020</div>
+							</div>
+							<div class="secure">
+								<img src="img/lock.png" alt="">
+								<div class="secure-alert">This form is secure and encrypted</div>
+								<img src="img/stripe.png" alt="">
+							</div>
+						</div>
+
+						<!-- Update -->
+						<div class="update-details text-center">
+							<a href="#">Or update your billing details.</a>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+</main>
+
+@@include('./templates/footer-steps.html')
