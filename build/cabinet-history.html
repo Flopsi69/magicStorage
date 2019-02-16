@@ -40,6 +40,75 @@
 	</header>
 
 
+<div class="modal fade modal-cancel-order" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+				<h4 class="modal-title" id="myModalLabel">Cancellation</h4>
+			</div>
+			<div class="modal-body">
+				<p>Are you sure you want to cancel this appointment?</p>
+				<div class="cancel-info">
+					<div class="row cancel-item">
+						<div class="col-sm-2 cell-wrap">
+							<div class="table-title first-item">type</div>
+							<div class="table-value">STORAGE</div>
+						</div>
+
+						<div class="col-sm-2 cell-wrap">
+							<div class="table-title">number</div>
+							<div class="table-value">2y36yr78</div>
+						</div>
+
+						<div class="col-sm-2 cell-wrap">
+							<div class="table-title">status</div>
+							<div class="table-value">placed</div>
+						</div>
+
+						<div class="col-sm-2 cell-wrap">
+							<div class="table-title">issue date</div>
+							<div class="table-value">jan 23, 2019</div>
+						</div>
+
+						<div class="col-sm-4 cell-wrap">
+							<div class="table-title last-item">items</div>
+							<div class="table-value">1 x Oversized Bin</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-green btn-order btn-cancellation btn-result">Confirm cancel</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade block-date modal-date" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<h3 class='calendar-title'>Pick up date</h3>
+		<div class="calendar-caption">When should we pick up your items to bring to storage?</div>
+
+		<!-- Calendar -->
+		<div class="calendar-wrap">
+			<!-- Body -->
+			<div class="calendar-body">
+				<!-- https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+				<div class="datetimepicker"></div>
+			</div>
+
+			<!-- Btn -->
+			<div class="btn-wrap">
+			</div>
+		</div>
+
+		<!-- Btn -->
+		<button type="button" class="btn btn-green btn-order btn-confirm-change btn-result">Confirm change</button>
+	</div>
+</div>
+
 <main class='main order-history-page'>
 	<!-- Section -->
 	<section class='section order-history'>
@@ -58,56 +127,12 @@
 			<div class="tab-content">
 				<!-- Panel -->
 				<div role="tabpanel" class="tab-pane fade in active" id="processing-order">
-					<div class="orders-wrap">
-						<div class="title">my orders details</div>
-						<!-- Order -->
-						<div class="row order">
-							<div class="col-md-10">
-								<!-- Table -->
-								<div class="row">
-									<div class="col-sm-2 cell-wrap">
-										<div class="table-title first-item">type</div>
-										<div class="table-value">STORAGE</div>
-									</div>
-
-									<div class="col-sm-2 cell-wrap">
-										<div class="table-title">number</div>
-										<div class="table-value">2y36yr78</div>
-									</div>
-
-									<div class="col-sm-2 cell-wrap">
-										<div class="table-title">status</div>
-										<div class="table-value">placed</div>
-									</div>
-
-									<div class="col-sm-2 cell-wrap">
-										<div class="table-title">issue date</div>
-										<div class="table-value">jan 23, 2019</div>
-									</div>
-
-									<div class="col-sm-4 cell-wrap">
-										<div class="table-title last-item">items</div>
-										<div class="table-value">1 x Oversized Bin</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-2">
-								<button class="btn btn-green btn-order">cancel order</button>
-							</div>
-						</div>
-					</div>
-
-					<div class="appointment-wrap">
-						<div class="title">your appointment is: <a href="#">sheduled</a></div>
-						<!-- Order -->
-						<div class="row address">
-							<div class="col-md-10">
-								<div class="cell-wrap">
-									<div class="table-title first-item last-item">address</div>
-									<div class="table-value">404 Winoda Drive, Toronto, Ontario, Канада, М6С 3Т5, +1 (800) 333-8888</div>
-								</div>
-								<!-- Order -->
-								<div class="order">
+					<div class="order-wrap" data-order-id='1'>
+						<div class="item-wrap">
+							<div class="title">my orders details</div>
+							<!-- Order -->
+							<div class="row order">
+								<div class="col-md-10">
 									<!-- Table -->
 									<div class="row">
 										<div class="col-sm-2 cell-wrap">
@@ -136,9 +161,55 @@
 										</div>
 									</div>
 								</div>
+								<div class="col-md-2">
+									<button class="btn btn-green btn-order" data-toggle="modal" data-target=".modal-cancel-order">cancel order</button>
+								</div>
 							</div>
-							<div class="col-md-2">
-								<button class="btn btn-green btn-order">re-schedule</button>
+						</div>
+
+						<div class="appointment-wrap">
+							<div class="title">your appointment is: <a href="#">sheduled</a></div>
+							<!-- Order -->
+							<div class="row address">
+								<div class="col-md-10">
+									<div class="cell-wrap">
+										<div class="table-title first-item last-item">address</div>
+										<div class="table-value">404 Winoda Drive, Toronto, Ontario, Канада, М6С 3Т5, +1 (800) 333-8888</div>
+									</div>
+									<!-- Order -->
+									<div class="order">
+										<!-- Table -->
+										<div class="row">
+											<div class="col-sm-2 cell-wrap">
+												<div class="table-title first-item">type</div>
+												<div class="table-value">STORAGE</div>
+											</div>
+
+											<div class="col-sm-2 cell-wrap">
+												<div class="table-title">number</div>
+												<div class="table-value">2y36yr78</div>
+											</div>
+
+											<div class="col-sm-2 cell-wrap">
+												<div class="table-title">status</div>
+												<div class="table-value">placed</div>
+											</div>
+
+											<div class="col-sm-2 cell-wrap">
+												<div class="table-title">issue date</div>
+												<div class="table-value">jan 23, 2019</div>
+											</div>
+
+											<div class="col-sm-4 cell-wrap">
+												<div class="table-title last-item">items</div>
+												<div class="table-value">1 x Oversized Bin</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<button class="btn btn-green btn-order" data-toggle="modal" data-target=".modal-date">re-schedule</button>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -146,13 +217,50 @@
 
 				<!-- Panel -->
 				<div role="tabpanel" class="tab-pane fade" id="fulling-order">
-					<div class="orders-wrap">
-						<div class="title">my orders details</div>
-						<!-- Order -->
-						<div class="row order">
-							<div class="col-md-10">
+					<div class="order-wrap">
+						<div class="item-wrap">
+							<div class="title">my orders details</div>
+							<!-- Order -->
+							<div class="order row">
 								<!-- Table -->
-								<div class="row">
+								<div class="col-sm-2 cell-wrap">
+									<div class="table-title first-item">type</div>
+									<div class="table-value">STORAGE</div>
+								</div>
+
+								<div class="col-sm-2 cell-wrap">
+									<div class="table-title">number</div>
+									<div class="table-value">2y36yr78</div>
+								</div>
+
+								<div class="col-sm-2 cell-wrap">
+									<div class="table-title">status</div>
+									<div class="table-value">placed</div>
+								</div>
+
+								<div class="col-sm-2 cell-wrap">
+									<div class="table-title">issue date</div>
+									<div class="table-value">jan 23, 2019</div>
+								</div>
+
+								<div class="col-sm-4 cell-wrap">
+									<div class="table-title last-item">items</div>
+									<div class="table-value">1 x Oversized Bin</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="appointment-wrap">
+							<div class="title">your appointment is: <a href="#">sheduled</a></div>
+							<!-- Order -->
+							<div class="address">
+								<div class="cell-wrap">
+									<div class="table-title first-item last-item">address</div>
+									<div class="table-value">404 Winoda Drive, Toronto, Ontario, Канада, М6С 3Т5, +1 (800) 333-8888</div>
+								</div>
+								<!-- Order -->
+								<div class="order row">
+									<!-- Table -->
 									<div class="col-sm-2 cell-wrap">
 										<div class="table-title first-item">type</div>
 										<div class="table-value">STORAGE</div>
@@ -178,55 +286,6 @@
 										<div class="table-value">1 x Oversized Bin</div>
 									</div>
 								</div>
-							</div>
-							<div class="col-md-2">
-								<button class="btn btn-green btn-order">cancel order</button>
-							</div>
-						</div>
-					</div>
-
-					<div class="appointment-wrap">
-						<div class="title">your appointment is: <a href="#">sheduled</a></div>
-						<!-- Order -->
-						<div class="row address">
-							<div class="col-md-10">
-								<div class="cell-wrap">
-									<div class="table-title first-item last-item">address</div>
-									<div class="table-value">404 Winoda Drive, Toronto, Ontario, Канада, М6С 3Т5, +1 (800) 333-8888</div>
-								</div>
-								<!-- Order -->
-								<div class="order">
-									<!-- Table -->
-									<div class="row">
-										<div class="col-sm-2 cell-wrap">
-											<div class="table-title first-item">type</div>
-											<div class="table-value">STORAGE</div>
-										</div>
-
-										<div class="col-sm-2 cell-wrap">
-											<div class="table-title">number</div>
-											<div class="table-value">2y36yr78</div>
-										</div>
-
-										<div class="col-sm-2 cell-wrap">
-											<div class="table-title">status</div>
-											<div class="table-value">placed</div>
-										</div>
-
-										<div class="col-sm-2 cell-wrap">
-											<div class="table-title">issue date</div>
-											<div class="table-value">jan 23, 2019</div>
-										</div>
-
-										<div class="col-sm-4 cell-wrap">
-											<div class="table-title last-item">items</div>
-											<div class="table-value">1 x Oversized Bin</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-2">
-								<button class="btn btn-green btn-order">re-schedule</button>
 							</div>
 						</div>
 					</div>
@@ -234,13 +293,50 @@
 
 				<!-- Panel -->
 				<div role="tabpanel" class="tab-pane fade" id="cancelled-order">
-					<div class="orders-wrap">
-						<div class="title">my orders details</div>
-						<!-- Order -->
-						<div class="row order">
-							<div class="col-md-10">
+					<div class="order-wrap">
+						<div class="item-wrap">
+							<div class="title">my orders details</div>
+							<!-- Order -->
+							<div class="order row">
 								<!-- Table -->
-								<div class="row">
+								<div class="col-sm-2 cell-wrap">
+									<div class="table-title first-item">type</div>
+									<div class="table-value">STORAGE</div>
+								</div>
+
+								<div class="col-sm-2 cell-wrap">
+									<div class="table-title">number</div>
+									<div class="table-value">2y36yr78</div>
+								</div>
+
+								<div class="col-sm-2 cell-wrap">
+									<div class="table-title">status</div>
+									<div class="table-value">placed</div>
+								</div>
+
+								<div class="col-sm-2 cell-wrap">
+									<div class="table-title">issue date</div>
+									<div class="table-value">jan 23, 2019</div>
+								</div>
+
+								<div class="col-sm-4 cell-wrap">
+									<div class="table-title last-item">items</div>
+									<div class="table-value">1 x Oversized Bin</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="appointment-wrap">
+							<div class="title">your appointment is: <a href="#">sheduled</a></div>
+							<!-- Order -->
+							<div class="address">
+								<div class="cell-wrap">
+									<div class="table-title first-item last-item">address</div>
+									<div class="table-value">404 Winoda Drive, Toronto, Ontario, Канада, М6С 3Т5, +1 (800) 333-8888</div>
+								</div>
+								<!-- Order -->
+								<div class="order row">
+									<!-- Table -->
 									<div class="col-sm-2 cell-wrap">
 										<div class="table-title first-item">type</div>
 										<div class="table-value">STORAGE</div>
@@ -266,55 +362,6 @@
 										<div class="table-value">1 x Oversized Bin</div>
 									</div>
 								</div>
-							</div>
-							<div class="col-md-2">
-								<button class="btn btn-green btn-order">cancel order</button>
-							</div>
-						</div>
-					</div>
-
-					<div class="appointment-wrap">
-						<div class="title">your appointment is: <a href="#">sheduled</a></div>
-						<!-- Order -->
-						<div class="row address">
-							<div class="col-md-10">
-								<div class="cell-wrap">
-									<div class="table-title first-item last-item">address</div>
-									<div class="table-value">404 Winoda Drive, Toronto, Ontario, Канада, М6С 3Т5, +1 (800) 333-8888</div>
-								</div>
-								<!-- Order -->
-								<div class="order">
-									<!-- Table -->
-									<div class="row">
-										<div class="col-sm-2 cell-wrap">
-											<div class="table-title first-item">type</div>
-											<div class="table-value">STORAGE</div>
-										</div>
-
-										<div class="col-sm-2 cell-wrap">
-											<div class="table-title">number</div>
-											<div class="table-value">2y36yr78</div>
-										</div>
-
-										<div class="col-sm-2 cell-wrap">
-											<div class="table-title">status</div>
-											<div class="table-value">placed</div>
-										</div>
-
-										<div class="col-sm-2 cell-wrap">
-											<div class="table-title">issue date</div>
-											<div class="table-value">jan 23, 2019</div>
-										</div>
-
-										<div class="col-sm-4 cell-wrap">
-											<div class="table-title last-item">items</div>
-											<div class="table-value">1 x Oversized Bin</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-2">
-								<button class="btn btn-green btn-order">re-schedule</button>
 							</div>
 						</div>
 					</div>
@@ -366,18 +413,8 @@
 	<script src='js/vendor/bootstrap-datetimepicker.min.js'></script>
 	<script src='js/vendor/slick.min.js'></script>
 	<script src='js/main.js'></script>
-	<script type="text/javascript">
-		$(function () {
-			if (	$('.datetimepicker').length ) {
 
-				$('.datetimepicker').datetimepicker({
-					inline: true,
-					format: 'MM/dd/YYYY'
-				});
-			}
-		});
-	</script>
-
+	<!-- Popover -->
 	<script>
 		$(function () {
 			$('[data-toggle="popover"]').popover({
@@ -387,6 +424,8 @@
 		})
 	</script>
 
+
+	<!-- Quantity -->
 	<script>
 		$('.quantity .btn').click(function(e){
 			e.preventDefault();
@@ -414,22 +453,28 @@
 			}
 		});
 
+		var finalTotalValue = 0;
 		$('.quantity input').change(function() {
 			minValue =  parseInt($(this).attr('min'));
 			maxValue =  parseInt($(this).attr('max'));
 			valueCurrent = parseInt($(this).val());
-
 			name = $(this).attr('name');
+
 			if(valueCurrent >= minValue) {
 				$(this).siblings('.btn-minus').removeAttr('disabled');
+				finalTotalValue -= $(this).parents('.item').data('price');
+				$('.subtotal .price').html('$' + finalTotalValue);
+				console.log(11)
 			} else {
 				$(this).val(minValue).siblings('.btn-minus').attr('disabled', true);
-			}
+			} 
 			if(valueCurrent <= maxValue) {
 				$(this).siblings('.btn-plus').removeAttr('disabled');
+				finalTotalValue += $(this).parents('.item').data('price');
+				$('.subtotal .price').html('$' + finalTotalValue);
+				console.log(22)
 			} else {
 				$(this).val(maxValue).siblings('.btn-plus').attr('disabled', true);
-
 			}
 		});
 	</script>
@@ -444,6 +489,138 @@
 			})
 		})
 	</script>
-	
+
+
+	<!-- Calendar picker -->
+	<script type="text/javascript">
+		$(function () {
+			if (	$('.datetimepicker').length ) {
+				$('.datetimepicker').datetimepicker({
+					inline: true,
+					format: 'dd/MM/YYYY',
+					minDate: new Date()
+				});
+			}
+		});
+
+		$(function () {
+			var vars = {};
+
+			vars.timeRanges = [
+			{
+				name: "10to13",
+				title: "10am to 1pm"
+			},
+			{
+				name: "13to16",
+				title: "1pm to 4pm"
+			},
+			{
+				name: "16to19",
+				title: "4pm to 7pm"
+			}];
+
+			vars.timeRangesBusy = {
+				"2019-02-14": {
+					"10to13": true,
+					"13to16": false,
+					"16to19": false
+				}
+			};
+
+
+			if($('.block-date').length) {
+				vars.timeRanges.forEach(item => {
+					$('.block-date .btn-wrap').append('<button class="btn btn-green" data-name=' + item.name + '>' + item.title + '</button>')
+				})
+
+				$('.block-date .btn-wrap .btn').on('click', function(){
+					$(this).toggleClass('active').siblings().removeClass('active');
+				})
+			}
+		});
+	</script>
+
+	<!-- Stripe -->
+	<script>
+		// Create a Stripe client.
+		var stripe = Stripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+
+		// Create an instance of Elements.
+		var elements = stripe.elements();
+
+		// Custom styling can be passed to options when creating an Element.
+		// (Note that this demo uses a wider set of styles than the guide below.)
+		var style = {
+			base: {
+				color: '#32325d',
+				lineHeight: '18px',
+				fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+				fontSmoothing: 'antialiased',
+				fontSize: '16px',
+				'::placeholder': {
+					color: '#aab7c4'
+				}
+			},
+			invalid: {
+				color: '#fa755a',
+				iconColor: '#fa755a'
+			}
+		};
+
+		// Create an instance of the card Element.
+		var card = elements.create('card', {style: style});
+
+		// Add an instance of the card Element into the `card-element` <div>.
+		card.mount('#card-element');
+
+		// Handle real-time validation errors from the card Element.
+		card.addEventListener('change', function(event) {
+			var displayError = document.getElementById('card-errors');
+			if (event.error) {
+				displayError.textContent = event.error.message;
+			} else {
+				displayError.textContent = '';
+			}
+		});
+
+		// Handle form submission.
+		var form = document.getElementById('payment-form');
+		form.addEventListener('submit', function(event) {
+			event.preventDefault();
+
+			stripe.createToken(card).then(function(result) {
+				if (result.error) {
+      		// Inform the user if there was an error.
+      		var errorElement = document.getElementById('card-errors');
+      		errorElement.textContent = result.error.message;
+      	} else {
+      		// Send the token to your server.
+      		stripeTokenHandler(result.token);
+      	}
+      });
+		});
+
+		// Submit the form with the token ID.
+		function stripeTokenHandler(token) {
+  		// Insert the token ID into the form so it gets submitted to the server
+  		var form = document.getElementById('payment-form');
+  		var hiddenInput = document.createElement('input');
+  		hiddenInput.setAttribute('type', 'hidden');
+  		hiddenInput.setAttribute('name', 'stripeToken');
+  		hiddenInput.setAttribute('value', token.id);
+  		form.appendChild(hiddenInput);
+
+  		// Submit the form
+  		form.submit();
+  	}
+  </script>
+
+  <script>
+  	$('.btn-add-address').click(function(){
+  		$('.form-add-address').submit();
+  	})
+  </script>
+
 </body>
 </html>

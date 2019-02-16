@@ -40,18 +40,8 @@
 	<script src='js/vendor/bootstrap-datetimepicker.min.js'></script>
 	<script src='js/vendor/slick.min.js'></script>
 	<script src='js/main.js'></script>
-	<script type="text/javascript">
-		$(function () {
-			if (	$('.datetimepicker').length ) {
 
-				$('.datetimepicker').datetimepicker({
-					inline: true,
-					format: 'MM/dd/YYYY'
-				});
-			}
-		});
-	</script>
-
+	<!-- Popover -->
 	<script>
 		$(function () {
 			$('[data-toggle="popover"]').popover({
@@ -61,6 +51,8 @@
 		})
 	</script>
 
+
+	<!-- Quantity -->
 	<script>
 		$('.quantity .btn').click(function(e){
 			e.preventDefault();
@@ -88,22 +80,28 @@
 			}
 		});
 
+		var finalTotalValue = 0;
 		$('.quantity input').change(function() {
 			minValue =  parseInt($(this).attr('min'));
 			maxValue =  parseInt($(this).attr('max'));
 			valueCurrent = parseInt($(this).val());
-
 			name = $(this).attr('name');
+
 			if(valueCurrent >= minValue) {
 				$(this).siblings('.btn-minus').removeAttr('disabled');
+				finalTotalValue -= $(this).parents('.item').data('price');
+				$('.subtotal .price').html('$' + finalTotalValue);
+				console.log(11)
 			} else {
 				$(this).val(minValue).siblings('.btn-minus').attr('disabled', true);
-			}
+			} 
 			if(valueCurrent <= maxValue) {
 				$(this).siblings('.btn-plus').removeAttr('disabled');
+				finalTotalValue += $(this).parents('.item').data('price');
+				$('.subtotal .price').html('$' + finalTotalValue);
+				console.log(22)
 			} else {
 				$(this).val(maxValue).siblings('.btn-plus').attr('disabled', true);
-
 			}
 		});
 	</script>
@@ -118,6 +116,138 @@
 			})
 		})
 	</script>
-	
+
+
+	<!-- Calendar picker -->
+	<script type="text/javascript">
+		$(function () {
+			if (	$('.datetimepicker').length ) {
+				$('.datetimepicker').datetimepicker({
+					inline: true,
+					format: 'dd/MM/YYYY',
+					minDate: new Date()
+				});
+			}
+		});
+
+		$(function () {
+			var vars = {};
+
+			vars.timeRanges = [
+			{
+				name: "10to13",
+				title: "10am to 1pm"
+			},
+			{
+				name: "13to16",
+				title: "1pm to 4pm"
+			},
+			{
+				name: "16to19",
+				title: "4pm to 7pm"
+			}];
+
+			vars.timeRangesBusy = {
+				"2019-02-14": {
+					"10to13": true,
+					"13to16": false,
+					"16to19": false
+				}
+			};
+
+
+			if($('.block-date').length) {
+				vars.timeRanges.forEach(item => {
+					$('.block-date .btn-wrap').append('<button class="btn btn-green" data-name=' + item.name + '>' + item.title + '</button>')
+				})
+
+				$('.block-date .btn-wrap .btn').on('click', function(){
+					$(this).toggleClass('active').siblings().removeClass('active');
+				})
+			}
+		});
+	</script>
+
+	<!-- Stripe -->
+	<script>
+		// Create a Stripe client.
+		var stripe = Stripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+
+		// Create an instance of Elements.
+		var elements = stripe.elements();
+
+		// Custom styling can be passed to options when creating an Element.
+		// (Note that this demo uses a wider set of styles than the guide below.)
+		var style = {
+			base: {
+				color: '#32325d',
+				lineHeight: '18px',
+				fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+				fontSmoothing: 'antialiased',
+				fontSize: '16px',
+				'::placeholder': {
+					color: '#aab7c4'
+				}
+			},
+			invalid: {
+				color: '#fa755a',
+				iconColor: '#fa755a'
+			}
+		};
+
+		// Create an instance of the card Element.
+		var card = elements.create('card', {style: style});
+
+		// Add an instance of the card Element into the `card-element` <div>.
+		card.mount('#card-element');
+
+		// Handle real-time validation errors from the card Element.
+		card.addEventListener('change', function(event) {
+			var displayError = document.getElementById('card-errors');
+			if (event.error) {
+				displayError.textContent = event.error.message;
+			} else {
+				displayError.textContent = '';
+			}
+		});
+
+		// Handle form submission.
+		var form = document.getElementById('payment-form');
+		form.addEventListener('submit', function(event) {
+			event.preventDefault();
+
+			stripe.createToken(card).then(function(result) {
+				if (result.error) {
+      		// Inform the user if there was an error.
+      		var errorElement = document.getElementById('card-errors');
+      		errorElement.textContent = result.error.message;
+      	} else {
+      		// Send the token to your server.
+      		stripeTokenHandler(result.token);
+      	}
+      });
+		});
+
+		// Submit the form with the token ID.
+		function stripeTokenHandler(token) {
+  		// Insert the token ID into the form so it gets submitted to the server
+  		var form = document.getElementById('payment-form');
+  		var hiddenInput = document.createElement('input');
+  		hiddenInput.setAttribute('type', 'hidden');
+  		hiddenInput.setAttribute('name', 'stripeToken');
+  		hiddenInput.setAttribute('value', token.id);
+  		form.appendChild(hiddenInput);
+
+  		// Submit the form
+  		form.submit();
+  	}
+  </script>
+
+  <script>
+  	$('.btn-add-address').click(function(){
+  		$('.form-add-address').submit();
+  	})
+  </script>
+
 </body>
 </html>

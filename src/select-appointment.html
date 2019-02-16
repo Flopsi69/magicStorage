@@ -1,5 +1,90 @@
 @@include('./templates/header-order.html')
 
+<div class="modal fade modal-add-address" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+				<h4 class="modal-title">New Address</h4>
+			</div>
+			<div class="modal-body">
+				
+				<form action="" class='form-add-address'>
+					<div class="row">
+						<div class="form-group col-md-6">
+							<label for="country">Country</label>
+							<input type="text" class="form-control" id="country" name='country'>
+						</div>
+						<div class="form-group col-md-6">
+							<label for="city">City</label>
+							<input type="text" class="form-control" id="city" name='city'>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="form-group col-md-6">
+							<label for="street_number">Street #</label>
+							<input type="text" class="form-control" id="street_number" name='street_number'>
+						</div>
+						<div class="form-group col-md-6">
+							<label for="street">Street Name</label>
+							<input type="text" class="form-control" id="street" name='street'>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="form-group col-md-6 col-md-offset-3">
+							<label for="postal_code">Postal Code</label>
+							<input type="text" class="form-control" id="postal_code" name='postal_code'>
+						</div>
+					</div>
+
+					<p class='text-center divider'>
+						Please fill out some additional info on this address
+					</p>
+
+					<div class="row">
+						<div class="form-group col-md-6">
+							<label for="phone">Phone</label>
+							<input type="tel" class="form-control" id="phone" name='phone'>
+						</div>
+						<div class="form-group col-md-6">
+							<label for="residence_type">Residence type</label>
+							<select class="form-control" id="residence_type" name='residence_type'>
+								<option value=" "></option>
+								<option value="house">house</option>
+								<option value="building">building</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="form-group col-md-6">
+							<label for="ground_floor">Ground floor</label>
+							<select class="form-control" id="ground_floor" name='ground_floor'>
+								<option value=" "></option>
+								<option value="yes">yes</option>
+								<option value="no">no</option>
+							</select>
+						</div>
+						<div class="form-group col-md-6">
+							<label for="elevator_access">Elevator access</label>
+							<select class="form-control" id="elevator_access" name='elevator_access'>
+								<option value=" "></option>
+								<option value="yes">yes</option>
+								<option value="no">no</option>
+							</select>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-green btn-add-address">Confirm</button>
+			</div>
+		</div>
+	</div>
+</div>
+
 <main class='main select-appointment-page'>
 	<!-- Section -->
 	<section class='section select-appointment'>
@@ -7,14 +92,14 @@
 			<!-- Title -->
 			<h1 class='text-center'>SET UP YOUR APPOINTMENT</h1>
 
-			<div class="row">
+			<form class="row form" action="">
 				<div class="col-md-8 col-md-offset-2">
 					<div class="plate text-center">
 						<div class="plate-title">appointment address</div>
 						<div class="caption">Select from your existing addresses:</div>
 						<div class="row">
 							<div class="col-md-6">
-								<div class="appoint active">
+								<div class="appoint active" data-address-id='1'>
 									404 WINONA DRIVE <br>
 									TORONTO, ONTARIO <br>
 									КАНАДА, M6C 3T5 <br>
@@ -23,7 +108,7 @@
 							</div>
 
 							<div class="col-md-6">
-								<div class="appoint">
+								<div class="appoint" data-address-id='2'>
 									404 WINONA DRIVE <br>
 									TORONTO, ONTARIO <br>
 									КАНАДА, M6C 3T5 <br>
@@ -32,7 +117,7 @@
 							</div>
 						</div>
 						<div class="btn-wrap">
-							<button class="btn btn-green">add new address</button>
+							<button class="btn btn-green" data-toggle="modal" data-target=".modal-add-address">add new address</button>
 						</div>
 					</div>
 
@@ -51,9 +136,6 @@
 
 									<!-- Btn -->
 									<div class="btn-wrap">
-										<button class="btn btn-green active">10AM to 1PM</button>
-										<button class="btn btn-green">1PM to 4PM</button>
-										<button class="btn btn-green">4PM to 7PM</button>
 									</div>
 								</div>
 							</div>
@@ -73,16 +155,13 @@
 
 									<!-- Btn -->
 									<div class="btn-wrap">
-										<button class="btn btn-green active">10AM to 1PM</button>
-										<button class="btn btn-green">1PM to 4PM</button>
-										<button class="btn btn-green">4PM to 7PM</button>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			</form>
 		</div>
 	</section>
 </main>
