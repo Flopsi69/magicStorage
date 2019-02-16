@@ -21,203 +21,546 @@
 				</div>
 
 				<ul class="steps">
-					<li class='active'>Customize</li>
-					<li>Appointment</li>
-					<li class='done'>Billings</li>
-					<li>Review</li>
+					<li class='active' data-step='1'>Customize</li>
+					<li data-step='2'>Appointment</li>
+					<li data-step='3'>Billings</li>
+					<li data-step='4'>Review</li>
 				</ul>
+				<div class="lang-toggle"><span class='active'>rus</span> | <span>en</span></div>
 
 				<div class="subtotal">
-					Subtotal <span class="price">$0</span> <span class="num">4</span>
+					Subtotal <span class="price">$0</span> <span class="num">0</span>
 				</div>
 			</div>
 		</div>
 	</header>
 
 
-<main class='main select-items-page'>
-	<!-- Section -->
-	<section class='section select-items'>
-		<div class="container">
-			<!-- Title -->
-			<h1 class='text-center'>select your items</h1>
-			<div class="caption text-center">Please note that there is a $1.5 per minute per mover moving fee while our movers are on site</div>
+<main class='main select-page'>
+	<form action="#" id='form-full-order'>
+		<!-- Section -->
+		<section class='section select-items'>
+			<div class="container">
+				<!-- Title -->
+				<h1 class='text-center'>select your items</h1>
+				<div class="caption text-center">Please note that there is a $1.5 per minute per mover moving fee while our movers are on site</div>
 
-			<!-- Wrap -->
-
-
-			<form action="" class="row items-wrap form">
-				<div class="col-lg-4 col-md-6">
-					<div class="items-block">
-						<!-- Item -->
-						<div class="item" data-item-id='1' data-price='30'>
-							<div class="quantity">
-								<button class="btn btn-minus">–</button>
-								<input type="text" value="0" min="0" max="20">
-								<button class="btn btn-plus">+</button>
+				<!-- Wrap -->
+				<div class="row items-wrap">
+					<div class="col-lg-4 col-md-6">
+						<div class="items-block">
+							<!-- Item -->
+							<div class="item" data-item-id='1' data-price='30.1'>
+								<div class="quantity">
+									<button class="btn btn-minus">–</button>
+									<input type="text" value="0" min="0" max="20">
+									<button class="btn btn-plus">+</button>
+								</div>
+								<div class="item-img">
+									<img src="img/bespoke-1.png" alt="">
+								</div>
+								<div class="descr">
+									<div class="title">Mattress bag (QUEEN)</div>
+									<div class="price">$5.00/mo.</div>
+									<button type="button" class="tooltip-link"  data-toggle="popover" data-placement="bottom" title="What is this?" data-content="The rybatext site will help the designer, coder, webmaster generate a few paragraphs less meaningful text Russian language.">What fits?</button>
+								</div>
 							</div>
-							<div class="item-img">
-								<img src="img/bespoke-1.png" alt="">
+
+							<!-- Item -->
+							<div class="item" data-item-id='2' data-price='30.2'>
+								<div class="quantity">
+									<button class="btn btn-minus">–</button>
+									<input type="text" value="0" min="0" max="20">
+									<button class="btn btn-plus">+</button>
+								</div>
+								<div class="item-img">
+									<img src="img/bespoke-1.png" alt="">
+								</div>
+								<div class="descr">
+									<div class="title">Mattress bag (QUEEN)</div>
+									<div class="price">$5.00/mo.</div>
+									<button type="button" class="tooltip-link"  data-toggle="popover" data-placement="bottom" title="What is this?" data-content="The rybatext site will help the designer, coder, webmaster generate a few paragraphs less meaningful text Russian language.">What fits?</button>
+								</div>
 							</div>
-							<div class="descr">
-								<div class="title">Mattress bag (QUEEN)</div>
-								<div class="price">$5.00/mo.</div>
-								<button type="button" class="tooltip-link"  data-toggle="popover" data-placement="bottom" title="What is this?" data-content="The rybatext site will help the designer, coder, webmaster generate a few paragraphs less meaningful text Russian language.">What fits?</button>
+
+							<!-- Item -->
+							<div class="item" data-item-id='3' data-price='30'>
+								<div class="quantity">
+									<button class="btn btn-minus">–</button>
+									<input type="text" value="0" min="0" max="20">
+									<button class="btn btn-plus">+</button>
+								</div>
+								<div class="item-img">
+									<img src="img/bespoke-1.png" alt="">
+								</div>
+								<div class="descr">
+									<div class="title">Mattress bag (QUEEN)</div>
+									<div class="price">$5.00/mo.</div>
+									<button type="button" class="tooltip-link"  data-toggle="popover" data-placement="bottom" title="What is this?" data-content="The rybatext site will help the designer, coder, webmaster generate a few paragraphs less meaningful text Russian language.">What fits?</button>
+								</div>
 							</div>
 						</div>
+					</div>
 
-						<!-- Item -->
-						<div class="item" data-item-id='1' data-price='30'>
-							<div class="quantity">
-								<button class="btn btn-minus">–</button>
-								<input type="text" value="0" min="0" max="20">
-								<button class="btn btn-plus">+</button>
+					<div class="col-lg-4 col-md-6">
+						<div class="items-block">
+							<!-- Item -->
+							<div class="item" data-item-id='4' data-price='30'>
+								<div class="quantity">
+									<button class="btn btn-minus">–</button>
+									<input type="text" value="0" min="0" max="20">
+									<button class="btn btn-plus">+</button>
+								</div>
+								<div class="item-img">
+									<img src="img/bespoke-1.png" alt="">
+								</div>
+								<div class="descr">
+									<div class="title">Mattress bag (QUEEN)</div>
+									<div class="price">$5.00/mo.</div>
+									<button type="button" class="tooltip-link"  data-toggle="popover" data-placement="bottom" title="What is this?" data-content="The rybatext site will help the designer, coder, webmaster generate a few paragraphs less meaningful text Russian language.">What fits?</button>
+								</div>
 							</div>
-							<div class="item-img">
-								<img src="img/bespoke-1.png" alt="">
+
+							<!-- Item -->
+							<div class="item" data-item-id='5' data-price='30'>
+								<div class="quantity">
+									<button class="btn btn-minus">–</button>
+									<input type="text" value="0" min="0" max="20">
+									<button class="btn btn-plus">+</button>
+								</div>
+								<div class="item-img">
+									<img src="img/bespoke-1.png" alt="">
+								</div>
+								<div class="descr">
+									<div class="title">Mattress bag (QUEEN)</div>
+									<div class="price">$5.00/mo.</div>
+									<button type="button" class="tooltip-link"  data-toggle="popover" data-placement="bottom" title="What is this?" data-content="The rybatext site will help the designer, coder, webmaster generate a few paragraphs less meaningful text Russian language.">What fits?</button>
+								</div>
 							</div>
-							<div class="descr">
-								<div class="title">Mattress bag (QUEEN)</div>
-								<div class="price">$5.00/mo.</div>
-								<button type="button" class="tooltip-link"  data-toggle="popover" data-placement="bottom" title="What is this?" data-content="The rybatext site will help the designer, coder, webmaster generate a few paragraphs less meaningful text Russian language.">What fits?</button>
+
+							<!-- Item -->
+							<div class="item" data-item-id='6' data-price='30'>
+								<div class="quantity">
+									<button class="btn btn-minus">–</button>
+									<input type="text" value="0" min="0" max="20">
+									<button class="btn btn-plus">+</button>
+								</div>
+								<div class="item-img">
+									<img src="img/bespoke-1.png" alt="">
+								</div>
+								<div class="descr">
+									<div class="title">Mattress bag (QUEEN)</div>
+									<div class="price">$5.00/mo.</div>
+									<button type="button" class="tooltip-link"  data-toggle="popover" data-placement="bottom" title="What is this?" data-content="The rybatext site will help the designer, coder, webmaster generate a few paragraphs less meaningful text Russian language.">What fits?</button>
+								</div>
 							</div>
 						</div>
+					</div>
 
-						<!-- Item -->
-						<div class="item" data-item-id='1' data-price='30'>
-							<div class="quantity">
-								<button class="btn btn-minus">–</button>
-								<input type="text" value="0" min="0" max="20">
-								<button class="btn btn-plus">+</button>
+					<div class="col-lg-4 col-md-6 col-md-offset-3 col-lg-offset-0">
+						<div class="items-block supplies-block">
+							<!-- Item -->
+							<div class="item item-supply" data-packing-supply-id='1' data-price='24'>
+								<div class="quantity">
+									<button class="btn btn-minus">–</button>
+									<input type="text" value="0" min="0" max="20">
+									<button class="btn btn-plus">+</button>
+								</div>
+								<div class="item-img">
+									<img src="img/bespoke-1.png" alt="">
+								</div>
+								<div class="descr">
+									<div class="title">Mattress bag (QUEEN)</div>
+									<div class="price">$5.00/mo.</div>
+									<button type="button" class="tooltip-link"  data-toggle="popover" data-placement="bottom" title="What is this?" data-content="The rybatext site will help the designer, coder, webmaster generate a few paragraphs less meaningful text Russian language.">What fits?</button>
+								</div>
 							</div>
-							<div class="item-img">
-								<img src="img/bespoke-1.png" alt="">
+
+							<!-- Item -->
+							<div class="item item-supply" data-packing-supply-id='1' data-price='24'>
+								<div class="quantity">
+									<button class="btn btn-minus">–</button>
+									<input type="text" value="0" min="0" max="20">
+									<button class="btn btn-plus">+</button>
+								</div>
+								<div class="item-img">
+									<img src="img/bespoke-1.png" alt="">
+								</div>
+								<div class="descr">
+									<div class="title">Mattress bag (QUEEN)</div>
+									<div class="price">$5.00/mo.</div>
+									<button type="button" class="tooltip-link"  data-toggle="popover" data-placement="bottom" title="What is this?" data-content="The rybatext site will help the designer, coder, webmaster generate a few paragraphs less meaningful text Russian language.">What fits?</button>
+								</div>
 							</div>
-							<div class="descr">
-								<div class="title">Mattress bag (QUEEN)</div>
-								<div class="price">$5.00/mo.</div>
-								<button type="button" class="tooltip-link"  data-toggle="popover" data-placement="bottom" title="What is this?" data-content="The rybatext site will help the designer, coder, webmaster generate a few paragraphs less meaningful text Russian language.">What fits?</button>
+
+							<!-- Item -->
+							<div class="item item-supply" data-packing-supply-id='1' data-price='24'>
+								<div class="quantity">
+									<button class="btn btn-minus">–</button>
+									<input type="text" value="0" min="0" max="20">
+									<button class="btn btn-plus">+</button>
+								</div>
+								<div class="item-img">
+									<img src="img/bespoke-1.png" alt="">
+								</div>
+								<div class="descr">
+									<div class="title">Mattress bag (QUEEN)</div>
+									<div class="price">$5.00/mo.</div>
+									<button type="button" class="tooltip-link"  data-toggle="popover" data-placement="bottom" title="What is this?" data-content="The rybatext site will help the designer, coder, webmaster generate a few paragraphs less meaningful text Russian language.">What fits?</button>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+			</div>
+		</section>
 
-				<div class="col-lg-4 col-md-6">
-					<div class="items-block">
-						<!-- Item -->
-						<div class="item" data-item-id='1' data-price='30'>
-							<div class="quantity">
-								<button class="btn btn-minus">–</button>
-								<input type="text" value="0" min="0" max="20">
-								<button class="btn btn-plus">+</button>
+		<!-- Section -->
+		<section class='section select-appointment active'>
+			<div class="container">
+				<!-- Title -->
+				<h1 class='text-center'>SET UP YOUR APPOINTMENT</h1>
+
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+						<div class="plate text-center">
+							<div class="plate-title">appointment address</div>
+							<div class="caption">Select from your existing addresses:</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="appoint" data-address-id='1'>
+										404 WINONA DRIVE <br>
+										TORONTO, ONTARIO <br>
+										КАНАДА, M6C 3T5 <br>
+										+1(800)333-8888
+									</div>
+								</div>
+
+								<div class="col-md-6">
+									<div class="appoint" data-address-id='2'>
+										404 WINONA DRIVE <br>
+										TORONTO, ONTARIO <br>
+										КАНАДА, M6C 3T5 <br>
+										+1(800)333-8888
+									</div>
+								</div>
 							</div>
-							<div class="item-img">
-								<img src="img/bespoke-1.png" alt="">
-							</div>
-							<div class="descr">
-								<div class="title">Mattress bag (QUEEN)</div>
-								<div class="price">$5.00/mo.</div>
-								<button type="button" class="tooltip-link"  data-toggle="popover" data-placement="bottom" title="What is this?" data-content="The rybatext site will help the designer, coder, webmaster generate a few paragraphs less meaningful text Russian language.">What fits?</button>
+							<div class="btn-wrap">
+								<button type='button' class="btn btn-green" data-toggle="modal" data-target=".modal-add-address">add new address</button>
 							</div>
 						</div>
 
-						<!-- Item -->
-						<div class="item" data-item-id='1' data-price='30'>
-							<div class="quantity">
-								<button class="btn btn-minus">–</button>
-								<input type="text" value="0" min="0" max="20">
-								<button class="btn btn-plus">+</button>
-							</div>
-							<div class="item-img">
-								<img src="img/bespoke-1.png" alt="">
-							</div>
-							<div class="descr">
-								<div class="title">Mattress bag (QUEEN)</div>
-								<div class="price">$5.00/mo.</div>
-								<button type="button" class="tooltip-link"  data-toggle="popover" data-placement="bottom" title="What is this?" data-content="The rybatext site will help the designer, coder, webmaster generate a few paragraphs less meaningful text Russian language.">What fits?</button>
-							</div>
-						</div>
+						<div class="row date-wrap">
+							<div class="col-sm-6">
+								<div class="block-date block-date-dropoff">
+									<h3 class='calendar-title'>drop of date</h3>
+									<div class="calendar-caption">When should we drop off our empty boxes for you to pack?</div>
+									<!-- Calendar -->
+									<div class="calendar-wrap">
+										<!-- Body -->
+										<div class="calendar-body">
+											<!-- https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+											<div class="datetimepicker"></div>
+										</div>
 
-						<!-- Item -->
-						<div class="item" data-item-id='1' data-price='30'>
-							<div class="quantity">
-								<button class="btn btn-minus">–</button>
-								<input type="text" value="0" min="0" max="20">
-								<button class="btn btn-plus">+</button>
+										<!-- Btn -->
+										<div class="btn-wrap">
+										</div>
+									</div>
+								</div>
 							</div>
-							<div class="item-img">
-								<img src="img/bespoke-1.png" alt="">
-							</div>
-							<div class="descr">
-								<div class="title">Mattress bag (QUEEN)</div>
-								<div class="price">$5.00/mo.</div>
-								<button type="button" class="tooltip-link"  data-toggle="popover" data-placement="bottom" title="What is this?" data-content="The rybatext site will help the designer, coder, webmaster generate a few paragraphs less meaningful text Russian language.">What fits?</button>
-							</div>
-						</div>
-					</div>
-				</div>
 
-				<div class="col-lg-4 col-md-6 col-md-offset-3 col-lg-offset-0">
-					<div class="items-block">
-						<!-- Item -->
-						<div class="item item-supply" data-packing-supply-id='1' data-price='24'>
-							<div class="quantity">
-								<button class="btn btn-minus">–</button>
-								<input type="text" value="0" min="0" max="20">
-								<button class="btn btn-plus">+</button>
-							</div>
-							<div class="item-img">
-								<img src="img/bespoke-1.png" alt="">
-							</div>
-							<div class="descr">
-								<div class="title">Mattress bag (QUEEN)</div>
-								<div class="price">$5.00/mo.</div>
-								<button type="button" class="tooltip-link"  data-toggle="popover" data-placement="bottom" title="What is this?" data-content="The rybatext site will help the designer, coder, webmaster generate a few paragraphs less meaningful text Russian language.">What fits?</button>
-							</div>
-						</div>
+							<div class="col-sm-6">
+								<div class="block-date block-date-pickup">
+									<h3 class='calendar-title'>pick up date</h3>
+									<div class="calendar-caption">When should we pick up your items to bring to storage?</div>
+									<!-- Calendar -->
+									<div class="calendar-wrap">
+										<!-- Body -->
+										<div class="calendar-body">
+											<!-- https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+											<div class="datetimepicker"></div>
+										</div>
 
-						<!-- Item -->
-						<div class="item item-supply" data-packing-supply-id='1' data-price='24'>
-							<div class="quantity">
-								<button class="btn btn-minus">–</button>
-								<input type="text" value="0" min="0" max="20">
-								<button class="btn btn-plus">+</button>
-							</div>
-							<div class="item-img">
-								<img src="img/bespoke-1.png" alt="">
-							</div>
-							<div class="descr">
-								<div class="title">Mattress bag (QUEEN)</div>
-								<div class="price">$5.00/mo.</div>
-								<button type="button" class="tooltip-link"  data-toggle="popover" data-placement="bottom" title="What is this?" data-content="The rybatext site will help the designer, coder, webmaster generate a few paragraphs less meaningful text Russian language.">What fits?</button>
-							</div>
-						</div>
-
-						<!-- Item -->
-						<div class="item item-supply" data-packing-supply-id='1' data-price='24'>
-							<div class="quantity">
-								<button class="btn btn-minus">–</button>
-								<input type="text" value="0" min="0" max="20">
-								<button class="btn btn-plus">+</button>
-							</div>
-							<div class="item-img">
-								<img src="img/bespoke-1.png" alt="">
-							</div>
-							<div class="descr">
-								<div class="title">Mattress bag (QUEEN)</div>
-								<div class="price">$5.00/mo.</div>
-								<button type="button" class="tooltip-link"  data-toggle="popover" data-placement="bottom" title="What is this?" data-content="The rybatext site will help the designer, coder, webmaster generate a few paragraphs less meaningful text Russian language.">What fits?</button>
+										<!-- Btn -->
+										<div class="btn-wrap">
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+			</div>
+		</section>
 
-				<input class='hidden' id='total-price' type="text" value='0'>
-				<input class='hidden' id='total-num' type="text" value='0'>
-			</form>
-		</div>
-	</section>
+		<!-- Section -->
+		<section class='section select-payment '>
+			<div class="container">
+				<!-- Title -->
+				<h1 class='text-center'>SELECT YOUR PAYMENT METHOD</h1>
+				<div class="alert-caption">Confirm an existing payment method or input a new one. Don't worry - you won't be charged until your first appointment!</div>
+
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+
+						<div class="plate text-center">
+							<div class="plate-title">Billing details</div>
+							<!-- Details -->
+							<div class="billing-details">
+								<div class="card-data">
+									<div class="num">XXXX-XXXX-XXXX-5311</div>
+									<div class="expiry">Expiry Date: 7, 2020</div>
+								</div>
+								<div class="secure">
+									<img src="img/lock.png" alt="">
+									<div class="secure-alert">This form is secure and encrypted</div>
+									<img src="img/stripe.png" alt="">
+								</div>
+							</div>
+
+							<!-- Update -->
+							<div class="update-details text-center">
+								<a href="#" data-toggle="modal" data-target=".modal-add-card">Or update your billing details.</a>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Section -->
+		<section class='section select-review '>
+			<div class="container">
+				<!-- Title -->
+				<h1 class='text-center'>Review your order</h1>
+				<div class="caption text-center">Once you’re satisfied with your order, click submit below to check out</div>
+
+				<div class="row">
+					<div class="col-md-6">
+						<div class="summary summary-order plate">
+							<div class="title">Order summary</div>
+							<div class="order-list">
+								<!-- Order Item -->
+								<!-- <div class="row order">
+									<div class="col-lg-7 col-sm-6 col-xs-8 item-wrap">
+										<div class="item">
+											<div class="icon"><img src="img/bespoke-1.png" alt=""></div>
+											<div class="descr">
+												<div class="name">Extra-Bulky Item</div>
+												<div class="unit-price">Unit Price: $18.00</div>	
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-3 quantity-num">Quantity: 1</div>
+									<div class="col-lg-2 col-sm-3 price">$18.00</div>
+								</div> -->
+							</div>
+
+							<div class="price-summary">
+								<div class="row subtotal">
+									<div class="col-lg-10 col-sm-9 col-xs-8">Subtotal:</div>
+									<div class="col-lg-2 col-sm-3 col-xs-4">$54.00</div>
+								</div>
+
+								<div class="row supplies">
+									<div class="col-lg-10 col-sm-9 col-xs-8">Taxes:</div>
+									<div class="col-lg-2 col-sm-3 col-xs-4">$8.00</div>
+
+									<div class="col-lg-10 col-sm-9 col-xs-8 marked">Total (with supplies)</div>
+									<div class="col-lg-2 col-sm-3 col-xs-4 marked">$62.00</div>
+								</div>
+
+								<div class="row total">
+									<div class="col-lg-10 col-sm-9 col-xs-8">Taxes:</div>
+									<div class="col-lg-2 col-sm-3 col-xs-4">$8.00</div>
+
+									<div class="col-lg-10 col-sm-9 col-xs-8 marked">Recurring Total</div>
+									<div class="col-lg-2 col-sm-3 col-xs-4 marked">$62.00</div>
+								</div>
+							</div>	
+
+							<div class="note">
+								Please note that there is a $1.50 per minute per mover moving fee while our movers are on site.
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="summary summary-appointment plate">
+							<div class="title">appointment summary</div>
+							<div class="row appointment-info">
+								<div class="col-md-7 col-sm-6">
+									404 Winoda Drive <br>
+									Toronto, Ontario <br>
+									Канада, М6С 3Т5 <br>
+									<a href="tel: +1 (800) 333-8888">+1 (800) 333-8888</a>
+								</div>
+								<div class="col-md-5 col-ms-6">
+									Type: Building <br>
+									On Ground Floor: No <br>
+									Elevator Access: No
+								</div>
+							</div>
+							<div class="row appointment-info">
+								<div class="col-md-7 col-sm-6">
+									Drop Off Date <br>
+									February 6th, 2019 <br>
+									10-to-1
+								</div>
+								<div class="col-md-5 col-ms-6">
+									Pick Up Date <br>
+									February 23rd, 2019 <br>
+									10-to-1
+								</div>
+							</div>
+
+							<div class="order-note">
+								<label for="">Order Notes</label>
+								<textarea name="" id="note-field" placeholder="Anything else we should know?"></textarea>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="summary summary-payment plate text-center">
+							<div class="title">Billing details</div>
+							<div class="billing-details">
+								<div class="card-data">
+									<div class="num">XXXX-XXXX-XXXX-5311</div>
+									<div class="expiry">Expiry date: 7, 2020</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<input type="text" id='items' name='items' value="">
+		<input type="text" id='packing_supplies' name='packing_supplies' value="">
+		<input type="text" id='address_id' name='address_id' value="">
+		<input type="text" id='pick_up_date' name='pick_up_date' value="">
+		<input type="text" id='pick_up_time' name='pick_up_time' value="">	
+		<input type="text" id='drop_off_date' name='drop_off_date' value="">
+		<input type="text" id='drop_off_time' name='drop_off_time' value="">
+		<input type="text" id='notes' name='notes' value="">
+	</form>
 </main>
+
+<!-- Modal add address -->
+<div class="modal fade modal-add-address" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<form class="modal-content form-add-address" action="">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+				<h4 class="modal-title">New Address</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="form-group col-md-6">
+						<label for="country">Country</label>
+						<input type="text" class="form-control" required id="country" name='country'>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="city">City</label>
+						<input type="text" class="form-control" required id="city" name='city'>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="form-group col-md-6">
+						<label for="street_number">Street #</label>
+						<input type="text" class="form-control" required id="street_number" name='street_number'>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="street">Street Name</label>
+						<input type="text" class="form-control" required id="street" name='street'>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="form-group col-md-6 col-md-offset-3">
+						<label for="postal_code">Postal Code</label>
+						<input type="text" class="form-control" required id="postal_code" name='postal_code'>
+					</div>
+				</div>
+
+				<p class='text-center divider'>
+					Please fill out some additional info on this address
+				</p>
+
+				<div class="row">
+					<div class="form-group col-md-6">
+						<label for="phone">Phone</label>
+						<input type="tel" class="form-control" required id="phone" name='phone'>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="residence_type">Residence type</label>
+						<select class="form-control" required id="residence_type" name='residence_type'>
+							<option value="house">house</option>
+							<option value="building">building</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="form-group col-md-6">
+						<label for="ground_floor">Ground floor</label>
+						<select class="form-control" required id="ground_floor" name='ground_floor'>
+							<option value="yes">yes</option>
+							<option value="no">no</option>
+						</select>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="elevator_access">Elevator access</label>
+						<select class="form-control" required id="elevator_access" name='elevator_access'>
+							<option value="yes">yes</option>
+							<option value="no">no</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-green btn-add-address">Confirm</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+<!-- Modal add card -->
+<div class="modal fade modal-add-card" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+				<h4 class="modal-title">Update Credit Card</h4>
+			</div>
+			<div class="modal-body">
+				<script src="https://js.stripe.com/v3/"></script>
+
+				<form action="/charge" method="post" id="payment-form">
+					<div class="form-row">
+						<label for="card-element">
+							Credit or debit card
+						</label>
+						<div id="card-element">
+							<!-- A Stripe Element will be inserted here. -->
+						</div>
+
+						<!-- Used to display form errors. -->
+						<div id="card-errors" role="alert"></div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-green btn-add-card">Add card</button>
+			</div>
+		</div>
+	</div>
+</div>
 
 <div class="fixed-footer">
 	<div class="container">
@@ -225,7 +568,7 @@
 			Next &#10095;
 		</button>
 		<div class="subtotal">
-			Subtotal <span class="price">$0</span> <span class="num">4</span>
+			Subtotal <span class="price">$0</span> <span class="num">0</span>
 		</div>
 	</div>
 </div>
@@ -236,256 +579,6 @@
 	<script src='js/vendor/bootstrap-datetimepicker.min.js'></script>
 	<script src='js/vendor/slick.min.js'></script>
 	<script src='js/main.js'></script>
-	<!-- Calendar picker -->
-	<script type="text/javascript">
-		$(function () {
-			if (	$('.datetimepicker').length ) {
-				$('.datetimepicker').datetimepicker({
-					inline: true,
-					format: 'dd/MM/YYYY',
-					minDate: new Date()
-				});
-			}
-		});
-
-		$(function () {
-			var vars = {};
-
-			vars.timeRanges = [
-			{
-				name: "10to13",
-				title: "10am to 1pm"
-			},
-			{
-				name: "13to16",
-				title: "1pm to 4pm"
-			},
-			{
-				name: "16to19",
-				title: "4pm to 7pm"
-			}];
-
-			vars.timeRangesBusy = {
-				"2019-02-14": {
-					"10to13": true,
-					"13to16": false,
-					"16to19": false
-				}
-			};
-
-
-			if($('.block-date').length) {
-				vars.timeRanges.forEach(item => {
-					$('.block-date .btn-wrap').append('<button class="btn btn-green" data-name=' + item.name + '>' + item.title + '</button>')
-				})
-
-				$('.block-date .btn-wrap .btn').on('click', function(){
-					$(this).toggleClass('active').siblings().removeClass('active');
-				})
-			}
-		});
-	</script>
-
-	<script>
-		$(function () {
-			$('[data-toggle="popover"]').popover({
-				trigger: 'focus hover', 
-				placepent: 'bottom'
-			});
-		})
-	</script>
-
-	<script>
-		$('.quantity .btn').click(function(e){
-			e.preventDefault();
-			var input = $(this).siblings('input');
-			var currentVal = parseInt(input.val());
-			if (!isNaN(currentVal)) {
-				if( $(this).hasClass('btn-minus') ){
-					if(currentVal >= input.attr('min')) {
-						input.val(currentVal - 1).change();
-					} 
-					if(parseInt(input.val()) == input.attr('min')) {
-						$(this).attr('disabled', true);
-					}
-				} else if( $(this).hasClass('btn-plus') ){
-					if(currentVal <= input.attr('max')) {
-						input.val(currentVal + 1).change();
-					}
-					if(parseInt(input.val()) == input.attr('max')) {
-						$(this).attr('disabled', true);
-					}
-
-				}
-			} else {
-				input.val(input.attr('min'));
-			}
-		});
-
-		var pseudoPrice;
-		$('.quantity input').change(function() {
-			minValue =  parseInt($(this).attr('min'));
-			maxValue =  parseInt($(this).attr('max'));
-			valueCurrent = parseInt($(this).val());
-			name = $(this).attr('name');
-			price = $(this).parents('.item').data('price');
-			var finalTotalValue = 0;
-			var numTotalItems = 0;
-			if(valueCurrent >= minValue) {
-				$(this).siblings('.btn-minus').removeAttr('disabled');
-			} else {
-				$(this).val(minValue).siblings('.btn-minus').attr('disabled', true);
-			} 
-			if(valueCurrent <= maxValue) {
-				$(this).siblings('.btn-plus').removeAttr('disabled');
-			} else {
-				$(this).val(maxValue).siblings('.btn-plus').attr('disabled', true);
-			}
-
-
-			$('.quantity input').each(function(){
-				finalTotalValue += $(this).val() * $(this).parents('.item').data('price');
-				numTotalItems += +$(this).val();
-			});
-
-
-			$('.subtotal .price').html('$' + finalTotalValue);
-			$('.subtotal .num').html(numTotalItems)
-			$('#total-price').val(finalTotalValue);
-			$('#total-num').val(numTotalItems);
-		});
-	</script>
-
-
-	<script>
-		$(function(){
-			$('a[data-toggle="collapse"]').click(function() {
-				if ( !$(this).hasClass('active') ) {
-					$('a[data-toggle="collapse"]:not(this)').removeClass('active');
-				}
-				$(this).toggleClass('active');
-			})
-		})
-	</script>
-
-	<!-- Stripe -->
-	<script>
-		// Create a Stripe client.
-		var stripe = Stripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
-
-		// Create an instance of Elements.
-		var elements = stripe.elements();
-
-		// Custom styling can be passed to options when creating an Element.
-		// (Note that this demo uses a wider set of styles than the guide below.)
-		var style = {
-			base: {
-				color: '#32325d',
-				lineHeight: '18px',
-				fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
-				fontSmoothing: 'antialiased',
-				fontSize: '16px',
-				'::placeholder': {
-					color: '#aab7c4'
-				}
-			},
-			invalid: {
-				color: '#fa755a',
-				iconColor: '#fa755a'
-			}
-		};
-
-		// Create an instance of the card Element.
-		var card = elements.create('card', {style: style});
-
-		// Add an instance of the card Element into the `card-element` <div>.
-		card.mount('#card-element');
-
-		// Handle real-time validation errors from the card Element.
-		card.addEventListener('change', function(event) {
-			var displayError = document.getElementById('card-errors');
-			if (event.error) {
-				displayError.textContent = event.error.message;
-			} else {
-				displayError.textContent = '';
-			}
-		});
-
-		// Handle form submission.
-		var form = document.getElementById('payment-form');
-		form.addEventListener('submit', function(event) {
-			event.preventDefault();
-
-			stripe.createToken(card).then(function(result) {
-				if (result.error) {
-      		// Inform the user if there was an error.
-      		var errorElement = document.getElementById('card-errors');
-      		errorElement.textContent = result.error.message;
-      	} else {
-      		// Send the token to your server.
-      		stripeTokenHandler(result.token);
-      	}
-      });
-		});
-
-		// Submit the form with the token ID.
-		function stripeTokenHandler(token) {
-  		// Insert the token ID into the form so it gets submitted to the server
-  		var form = document.getElementById('payment-form');
-  		var hiddenInput = document.createElement('input');
-  		hiddenInput.setAttribute('type', 'hidden');
-  		hiddenInput.setAttribute('name', 'stripeToken');
-  		hiddenInput.setAttribute('value', token.id);
-  		form.appendChild(hiddenInput);
-
-  		// Submit the form
-  		form.submit();
-  	}
-  </script>
-
-
-  <!-- Summary -->
-  <script>
-  	var vars = {};
-  	vars.items = [
-  	{
-  		id: 1,
-  		img: 'img/bespoke-1.png',
-  		price: '22',
-  		name: "Extra-Bulky Item"
-  	},
-  	{
-  		id: 2,
-  		img: 'img/bespoke-1.png',
-  		price: '11',
-  		name: "Extra-Bulky Item 2"
-  	},
-  	{
-  		id: 3,
-  		img: 'img/bespoke-1.png',
-  		price: '34',
-  		name: "Extra-Bulky Item 3"
-  	}
-  	]
-
-/*  	vars.packingSupplies = [
-  	{
-  		id: XXX,
-  		img: {url},
-  		price: XXX,
-  		name: “supply name”
-  	},
-  	…
-  	]*/
-
-  	vars.items.forEach(function(item) {
-  		var orderHtml = '<div class="row order" data-order-id=' + item.id + '> <div class="col-lg-7 col-sm-6 col-xs-8 item-wrap"> <div class="item"> <div class="icon"><img src="' + item.img + '" alt=""></div> <div class="descr"> <div class="name">' + item.name + '</div> <div class="unit-price">Unit Price: $18.00</div> </div> </div> </div> <div class="col-sm-3 quantity-num">Quantity: 1</div> <div class="col-lg-2 col-sm-3 price">' + item.price + '$</div> </div>';
-  		$('.summary-order .order-list').append(orderHtml);
-  	})
-
-
-
-  </script>
 	
 </body>
 </html>

@@ -1,6 +1,6 @@
 @@include('./templates/header-cabinet.html')
 
-<div class="modal fade block-date modal-date" tabindex="-1" role="dialog">
+<div class="modal fade block-date modal-date modal-date-dropoff" tabindex="-1" role="dialog">
 	<div class="modal-dialog" role="document">
 		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 		<h3 class='calendar-title'>drop of date</h3>
@@ -18,8 +18,30 @@
 			<div class="btn-wrap">
 			</div>
 
-			<button type="button" class="btn btn-green btn-order btn-confirm-pickup btn-result">Confirm pickup</button>
 			<button type="button" class="btn btn-green btn-order btn-confirm-dropoff btn-result">Confirm dropoff</button>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade block-date modal-date modal-date-pickup" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<h3 class='calendar-title'>PICK UP DATE</h3>
+		<div class="calendar-caption">When should we pick up your items to bring to storage?</div>
+
+		<!-- Calendar -->
+		<div class="calendar-wrap">
+			<!-- Body -->
+			<div class="calendar-body">
+				<!-- https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+				<div class="datetimepicker"></div>
+			</div>
+
+			<!-- Btn -->
+			<div class="btn-wrap">
+			</div>
+
+			<button type="button" class="btn btn-green btn-order btn-confirm-pickup btn-result">Confirm pickup</button>
 		</div>
 	</div>
 </div>
@@ -253,7 +275,7 @@
 											<div class="col-md-6 col-xs-4 item-quantity">22</div>
 										</div>
 
-										<div class="deadline-booking" data-toggle="modal" data-target=".modal-date">
+										<div class="deadline-booking" data-toggle="modal" data-target=".modal-date-dropoff">
 											<div class="date">31.02.2019</div>
 											<div class="time">8AM to 12PM</div>
 										</div>
@@ -262,8 +284,8 @@
 
 								<!-- Btn -->
 								<div class="btn-wrap">
-									<button class="btn btn-green" data-toggle="modal" data-target=".modal-date">забрать сейчас</button>
-									<button class="btn btn-green"  data-toggle="modal" data-target=".modal-date">продлить</button>
+									<button class="btn btn-green" data-toggle="modal" data-target=".modal-date-pickup">забрать сейчас</button>
+									<button class="btn btn-green"  data-toggle="modal" data-target=".modal-date-dropoff">продлить</button>
 								</div>
 							</div>
 						</div>
@@ -330,7 +352,7 @@
 											<div class="col-md-6 col-xs-4 item-quantity">22</div>
 										</div>
 
-										<div class="deadline-booking" data-toggle="modal" data-target=".modal-date">
+										<div class="deadline-booking" data-toggle="modal" data-target=".modal-date-dropoff">
 											<div class="date">31.02.2019</div>
 											<div class="time">8AM to 12PM</div>
 										</div>
@@ -339,8 +361,8 @@
 
 								<!-- Btn -->
 								<div class="btn-wrap">
-									<button class="btn btn-green" data-toggle="modal" data-target=".modal-date">забрать сейчас</button>
-									<button class="btn btn-green"  data-toggle="modal" data-target=".modal-date">продлить</button>
+									<button class="btn btn-green" data-toggle="modal" data-target=".modal-date-pickup">забрать сейчас</button>
+									<button class="btn btn-green"  data-toggle="modal" data-target=".modal-date-dropoff">продлить</button>
 								</div>
 							</div>
 						</div>
@@ -412,7 +434,7 @@
 											<div class="col-md-6 col-xs-4 item-quantity">22</div>
 										</div>
 
-										<div class="deadline-booking" data-toggle="modal" data-target=".modal-date">
+										<div class="deadline-booking" data-toggle="modal" data-target=".modal-date-dropoff">
 											<div class="date">31.02.2019</div>
 											<div class="time">8AM to 12PM</div>
 										</div>
@@ -421,7 +443,7 @@
 
 								<!-- Btn -->
 								<div class="btn-wrap">
-									<button class="btn btn-green" data-toggle="modal" data-target=".modal-date">продлить</button>
+									<button class="btn btn-green" data-toggle="modal" data-target=".modal-date-dropoff">продлить</button>
 								</div>
 							</div>
 						</div>
@@ -488,7 +510,7 @@
 											<div class="col-md-6 col-xs-4 item-quantity">22</div>
 										</div>
 
-										<div class="deadline-booking" data-toggle="modal" data-target=".modal-date">
+										<div class="deadline-booking" data-toggle="modal" data-target=".modal-date-dropoff">
 											<div class="date">31.02.2019</div>
 											<div class="time">8AM to 12PM</div>
 										</div>
@@ -497,7 +519,7 @@
 
 								<!-- Btn -->
 								<div class="btn-wrap">
-									<button class="btn btn-green" data-toggle="modal" data-target=".modal-date">продлить</button>
+									<button class="btn btn-green" data-toggle="modal" data-target=".modal-date-dropoff">продлить</button>
 								</div>
 							</div>
 						</div>
