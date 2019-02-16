@@ -392,6 +392,7 @@ $(document).ready(function(){
 		});
 
 		$('#items').val(itemJson);
+		console.log(JSON.parse(JSON.stringify($('#items').val())));
 		$('#packing_supplies').val(packingSuppliesJson);
 		$('.subtotal .price').html('$' + finalTotalValue);
 		$('.subtotal .num').html(numTotalItems)
