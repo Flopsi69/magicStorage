@@ -177,19 +177,18 @@ $(document).ready(function(){
 		} else {
 			$('#drop_off_date').val(order_date);
 		}
-
-		if($('.block-date.active').length) {
+		if($('.block-date.active').length && vars.timeRangesBusy[order_date] !== undefined ) {
 			for (var key in vars.timeRangesBusy[order_date]) {
-				console.log(order_date + 'key:' + key );
 				if(vars.timeRangesBusy[order_date][key]) {
 					$('.block-date.active .btn[data-name='+ key +']').addClass('disabled');
 				} else {
 					$('.block-date.active .btn[data-name='+ key +']').removeClass('disabled');
 				}
 			}
+		} else if (vars.timeRangesBusy[order_date] === undefined) {
+			$('.block-date.active .btn-wrap .btn').removeClass('disabled');
 		} else {
 			for (var key in vars.timeRangesBusy[order_date]) {
-				console.log(order_date + 'key:' + key );
 				if(vars.timeRangesBusy[order_date][key]) {
 					$('.block-date .btn[data-name='+ key +']').addClass('disabled');
 				} else {
@@ -308,15 +307,78 @@ $(document).ready(function(){
 	$('.fixed-footer .btn-next').click(function(e){
 		e.preventDefault();
 		if (!$(this).hasClass('form-submit')) {
-			$('.header-steps .steps .active').removeClass('active').addClass('done').next().addClass('active');
-			$('.select-page .section.active').removeClass('active').next().addClass('active');
-			if ($('.select-review.active').length) {
-				$(this).addClass('form-submit').text('Confirm');
+			if( checkStep()) {
+				$('.header-steps .steps .active').removeClass('active').addClass('done').next().addClass('active');
+				$('.select-page .section.active').removeClass('active').next().addClass('active');
+				stepNext();
 			}
 		} else {
 			$('#form-full-order').submit();
 		}
 	})
+
+	$('.header .steps li').click(function(){
+		var stepId = $(this).data('step');
+		if ($(this).hasClass('done') ) {
+			$(this).removeClass('done').addClass('active').siblings().removeClass('active');
+			$('.select-page .section').removeClass('active');
+			$('.select-page .section.step-' + stepId).addClass('active');
+			if ($(this).next().hasClass('done') ) {
+				$(this).next().removeClass('done').next().removeClass('done');
+			}
+			stepNext();
+		}
+
+		if($(this).prev().hasClass('active')) {
+			checkStep()
+			if( checkStep()) {
+				$(this).addClass('active').prev().removeClass('active').addClass('done');
+				$('.select-page .section.active').removeClass('active').next().addClass('active');
+				stepNext();
+			}
+		}
+	})
+
+	function checkStep() {
+		if(!$('#items_num').val().length) {
+			alert('Выберите хоть один товар!');
+			return false;
+		} else if ($('.select-page section.active').hasClass('select-appointment')) {
+			if(!$('#address_id').val()) {
+				alert('Выберите адресс доставки!');
+				return false;
+			} else if (!$('#pick_up_date').val()) {
+				alert('Выберите дату получения!');
+				return false;
+			} else if (!$('#pick_up_time').val()) {
+				alert('Выберите время получения!');	
+				return false;		
+			} else if (!$('#drop_off_date').val()) {
+				alert('Выберите дату возврата!');
+				return false;
+			} else if (!$('#drop_off_time').val()) {
+				alert('Выберите время возврата!');	
+				return false;		
+			}
+		} 
+		return true;
+	}
+
+	function stepNext() {
+		console.log($('#items_price').val());
+		if ($('.select-review.active').length) {
+			$('.fixed-footer .btn-next').addClass('form-submit').text('Confirm');
+
+			$('#drop_off_date-value').html($('#drop_off_date').val())
+			$('#drop_off_time-value').html($('#drop_off_time').val())
+			$('#pick_up_date-value').html($('#pick_up_date').val())
+			$('#pick_up_time-value').html($('#pick_up_time').val())
+
+
+		} else {
+			$('.fixed-footer .btn-next').removeClass('form-submit').html('Next &#10095;');
+		}
+	}
 
 
 	/*<!-- Popover -->*/
@@ -355,6 +417,7 @@ $(document).ready(function(){
 	});
 
 	var pseudoPrice;
+
 	$('.quantity input').change(function() {
 		minValue =  parseInt($(this).attr('min'));
 		maxValue =  parseInt($(this).attr('max'));
@@ -377,7 +440,7 @@ $(document).ready(function(){
 
 		var itemJson = '', packingSuppliesJson  = '';
 
-		$('.quantity input').each(function(){
+		$('.quantity input').each(function(index){
 			finalTotalValue += $(this).val() * $(this).parents('.item').data('price');
 			numTotalItems += +$(this).val();
 			var quantity = $(this).val();
@@ -391,10 +454,13 @@ $(document).ready(function(){
 			}
 		});
 
-		$('#items').val(itemJson);
-		console.log(JSON.parse(JSON.stringify($('#items').val())));
-		$('#packing_supplies').val(packingSuppliesJson);
-		$('.subtotal .price').html('$' + finalTotalValue);
+		$('#items').val(JSON.stringify('[' + itemJson + ']'));
+		console.log($('#items').val());
+		$('#items_price').val(finalTotalValue.toFixed(2));
+		$('#items_num').val(numTotalItems);
+		$('#packing_supplies').val(JSON.stringify('[' + packingSuppliesJson + ']'));
+		console.log($('#packing_supplies').val());
+		$('.subtotal .price').html('$' + finalTotalValue.toFixed(2));
 		$('.subtotal .num').html(numTotalItems)
 	});
 
